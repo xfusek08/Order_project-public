@@ -1,0 +1,590 @@
+body
+{
+  margin: 0;
+  font: 13px Arial, Verdana, Tahoma, sans-serif;
+}
+div
+{
+  margin: 0;
+  padding: 0;
+}
+.loading
+{
+  float: right;  
+}
+.loading img
+{
+  height: 20px;
+}
+.announcement
+{
+  position: fixed;
+  padding: 2px;  
+  font-size: 15px;
+  z-index: 1000;
+}
+alert
+{
+  display: none;
+}
+.intro a
+{
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  display: block;
+  height: 70px;
+  width: 150px;  
+  margin: 8px;
+}
+.maincontent
+{
+  max-height: 100vh;
+  height: 100vh; /* cela vyska obrazovky */
+  max-width: 100vw;
+  width: 100vw;  /*  cela sirka obrazovky*/
+  display: table;
+  table-layout: fixed;
+  overflow: hidden;
+}
+.maincontent > div
+{
+  display: table-cell;
+  vertical-align: top;
+}
+.maincontent > div > div
+{
+  display: block;
+  max-height: 100vh;
+  height: 100vh;
+  overflow-y: auto;  
+  width: 100%;
+}
+.right
+{
+  width: 100%;  
+}
+.left
+{
+  width: 166px;  
+}
+.right > div
+{
+  background: #efefef;
+  height: 100px;
+}
+.right > div > .cap,
+.right .settingpage .cap
+{
+  font-size: 17px;
+  font-weight: bold;
+  padding: 8px;
+  padding-bottom: 3px;
+  border-bottom: 2px black solid;
+}
+.left > div
+{
+  background-color: rgb(30,30,30);
+}
+.left > div ul
+{
+  padding-left: 20px;
+  list-style-image: none;
+  margin: 0;
+  padding: 0  
+}
+.left > div ul li
+{
+  padding-left: 0;  
+  padding: 8px;
+  cursor: pointer;
+}
+.left > div ul li:hover
+{
+  background-color: rgba(255,255,255,0.2);  
+}
+.left > div ul li.selected
+{
+  color: rgb(255,200,200);  
+}
+.left > div ul > a 
+{
+  font-size: 15px;
+  text-decoration: none;
+  color: rgb(220,220,220);
+  white-space: nowrap;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.buttonbar
+{
+  height: 28px;
+}
+.browserconn
+{
+  position: relative;
+  border-bottom: 3px double black;
+  overflow: auto;
+  z-index: 2;
+  min-height: 200px;
+}
+.inline
+{
+  display: inline-block;
+  vertical-align: top;
+}
+.floatform
+{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  z-index: 1000;
+  top: 0;
+  left: 0;  
+  overflow: auto;
+}
+.floatform > div
+{
+  background: white;
+  padding: 8px;
+  margin-bottom: 10px;
+  display: inline-block;
+  box-shadow:         3px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow:    3px 5px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.75);
+}
+.floatform > div .text
+{
+  padding: 20px;  
+}
+.floatform > div .buttonline
+{
+  float: right;
+}
+.floatform > div .buttonline button
+{
+  margin: 4px;
+}
+.floatform .caption
+{
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 25px;  
+}
+.floatform .caption * 
+{
+  vertical-align: middle;
+  line-height: 26px;  
+}
+.floatform .caption img
+{
+  height: 23px;
+  margin-right: 8px;
+}
+.storagesconn > .cap,
+.custlist > .cap,
+.dbpageform > .cap
+{
+  padding: 2px;
+  font-weight: bold;
+  font-size: 15px;
+  padding-top: 5px;
+  /*
+  padding-left: 8px;
+  padding-right: 8px;
+  border-bottom: 1px solid black;
+  background: rgb(150,150,150);
+  color: white;  
+  */
+}
+
+.dbpageform
+{
+  padding: 5px;  
+}
+.dbpageform .actions
+{
+  float: left;
+  margin-left: 5px;
+  vertical-align: top;
+}
+
+.dbpageform .actions *[type="submit"]
+{
+  vertical-align: top;
+  cursor: pointer;
+  /*
+  padding: 5px;
+  padding-right: 8px;
+  */
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid rgba(27,31,35,0.2);
+  line-height: 25px;
+  border-radius: 0.25em;
+}
+.dbpageform .actions *[type="submit"] span
+{
+  line-height: 25px;
+  margin: 0;
+  padding: 0;
+  padding-left: 8px;
+  vertical-align: top;
+}
+.dbpageform .actions *[type="submit"] img
+{
+  vertical-align: top;
+  padding: 2px;
+  height: 20px;  
+}
+.dbpageform .actions *[type="submit"][name="c_submit"]
+{
+  background-color: #28a745;
+  background-image: -webkit-linear-gradient(270deg, #34d058 0%, #28a745 90%);
+  background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+  color: white;
+}
+.dbpageform .actions *[type="submit"][name="c_submit"]:hover
+{
+  background-color: #269f42;
+  background-image: -webkit-linear-gradient(270deg, #2fcb53 0%, #269f42 90%);
+  background-image: linear-gradient(-180deg, #2fcb53 0%, #269f42 90%);
+  border-color: rgba(27,31,35,0.5);
+  box-shadow: inset 0 0.15em 0.3em rgba(27,31,35,0.15);
+}
+.dbpageform .actions *[type="submit"][name="c_delete"]
+{
+  color: #cb2431;
+  background-color: #fafbfc;
+  background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
+  background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+}
+.dbpageform .actions *[type="submit"][name="c_delete"]:hover
+{
+  color: #fff;
+  background-color: #cb2431;
+  background-image: -webkit-linear-gradient(270deg, #de4450 0%, #cb2431 90%);
+  background-image: linear-gradient(-180deg, #de4450 0%, #cb2431 90%);
+  border-color: rgba(27,31,35,0.5);
+}
+.dbpageform .actions *[type="submit"][disabled],
+.dbpageform .actions *[type="submit"][disabled]:hover
+{
+  color: rgb(180,180,180);
+  background-color: rgb(230,230,230);
+  background-image: -webkit-linear-gradient(270deg, rgb(230,230,230) 0%, rgb(200,200,200) 90%);
+  background-image: linear-gradient(-180deg, rgb(230,230,230) 0%, rgb(200,200,200) 90%);
+  border-color: rgba(27,31,35,0.5);
+  box-shadow: inset 0 0.15em 0.3em rgba(27,31,35,0.15);
+}
+.formtab
+{
+  margin: 0;
+  padding: 0;
+  border-spacing: 5px;
+  margin-top: 8px;
+  width: 100%;
+}
+.formtab td
+{
+  padding: 0;
+}
+.formtab > tbody > tr > td
+{
+  vertical-align: top;
+}
+.formgr
+{
+  white-space: nowrap;
+  padding: 3px; 
+  border: 2px black dotted;
+  color: rgb(20,20,20);
+}
+.formgr > *
+{
+  position: relative;
+  top: -15px;  
+}
+.formgr input[type=text]
+{
+  width: calc(100% - 4px);
+}
+.formgr > .cap
+{
+  background: #efefef;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 10px;
+}
+.dottedtop
+{
+  margin-top: 10px;  
+}
+.stattabl
+{
+  border-collapse: collapse;    
+}
+.stattabl tr:first-child > td
+{
+  padding: 5px;
+  background: rgb(230,230,230);
+}
+.stattabl td
+{
+  border: 1px solid rgb(200,200,200);    
+  text-align: center;
+  vertical-align: middle;
+}
+.stattabl .val
+{
+  background: white;
+  line-height: 30px;
+  color: rgb(100,100,100);
+  padding-left: 5px;
+  padding-right: 5px;
+  min-width: 85px;
+}
+.browser tbody tr.blocked td
+{
+  color: red;
+}
+.colorpicker
+{
+  vertical-align: top;
+  cursor: pointer;
+}
+.colorpicker img
+{
+  height: 14px;
+}
+.colorprev > div
+{
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  /*border: 1px solid rgb(200,200,200);*/
+  box-shadow:         1px 1px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow:    1px 1px 2px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.75);
+}
+.nodata
+{
+  margin: auto;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(150,150,150,0.5);
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+fieldset
+{
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+input.uppercase
+{
+  text-transform: uppercase;
+}
+.metaltheme.ui-datepicker
+{
+  background: white;
+  webkit-box-shadow: 0px 2px 5px 1px rgb(100,100,100);
+    -moz-box-shadow: 0px 2px 5px 1px rgb(100,100,100);
+         box-shadow: 0px 2px 5px 1px rgb(100,100,100);
+}
+.metaltheme.ui-datepicker .ui-datepicker-group-first .ui-datepicker-calendar
+{
+  margin-right: 2px;
+}
+.metaltheme.ui-datepicker .ui-datepicker-group-last .ui-datepicker-calendar
+{
+  margin-left: 2px;  
+}
+.metaltheme.ui-datepicker a
+{
+  text-decoration: none;
+  color: black;
+}
+.metaltheme.ui-datepicker table
+{
+  margin: 0px;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.metaltheme.ui-datepicker table th
+{
+  color: black;
+}
+
+.metaltheme.ui-datepicker table td
+{  
+  vertical-align: middle;
+  padding: 0;  
+}
+.metaltheme.ui-datepicker .ui-state-default
+{
+  margin: 0;
+  vertical-align: middle;
+  line-height: 22px;
+  display: table-cell;
+  width: 30px;
+  height: 25px;  
+  background: white;
+}
+.metaltheme.ui-datepicker .ui-state-default:hover
+{
+  font-weight: bold;
+  font-size: 15px;
+}
+.metaltheme.ui-datepicker td .ui-state-active
+{
+}
+.metaltheme.ui-datepicker td .ui-state-active
+{
+  font-weight: bold;
+}
+.metaltheme.ui-datepicker .ui-state-disabled > *
+{
+  background-color: rgb(200, 200, 200);
+}
+.metaltheme.ui-datepicker .ui-datepicker-other-month > *
+{
+  color: rgb(150,150,150);
+}
+.metaltheme.ui-datepicker .ui-datepicker-today > *
+{
+  outline-style: inset;
+  outline-color: rgba(255,100,10, 1);
+  outline-width: 2px;
+}
+.metaltheme.ui-datepicker .ui-datepicker-today.ui-state-disabled > *
+{
+  background: rgb(230,230,150);
+}
+.metaltheme.ui-datepicker .ui-datepicker-next
+{
+  float: right;
+}
+.metaltheme.ui-datepicker .ui-datepicker-prev
+{
+  float: left;
+}
+.metaltheme.ui-datepicker .ui-datepicker-header
+{
+  text-align: center;
+  height: 35px;  
+  vertical-align: middle;    
+  background: rgb(150,150,150);
+  background: -webkit-linear-gradient(white, rgb(150,150,150));
+  background: -o-linear-gradient(white, rgb(150,150,150));
+  background: -moz-linear-gradient(white, rgb(150,150,150));
+  background: linear-gradient(white, rgb(150,150,150));
+}
+.ui-datepicker-title
+{
+  padding-top: 8px;
+  display: inline-block;  
+}
+.ui-datepicker-title > *
+{
+  font-weight: bold;
+  font-size: 13px;
+}
+.metaltheme.ui-datepicker .ui-datepicker-next,
+.metaltheme.ui-datepicker .ui-datepicker-prev
+{
+  font-size: 20px;
+  padding: 2px;
+  width: 20px;
+  cursor: pointer;
+  padding: 3px;  
+  line-height: 30px;
+}
+.metaltheme.ui-datepicker .ui-datepicker-next:hover,
+.metaltheme.ui-datepicker .ui-datepicker-prev:hover
+{
+  font-size: 25px;
+}
+.yearsummary
+{
+  border-radius: 5px;
+  font-size: 15px;
+  margin: 5px;
+  margin-top: 20px;
+  height: calc(100% - 275px);
+  color: white;
+  width: 95%;
+  /*
+  background: rgb(70,70,70);
+  color: black;
+  background: white;
+  */
+}
+.yearsummary > table
+{
+  border-bottom: 2px solid rgb(180,180,180);
+  font-weight: bold;
+  width: 100%;
+}
+.yearsummary .scrolltable
+{
+  height: calc(100% - 30px);
+  overflow: auto;
+  font-size: 13px;
+}
+.yearsummary .profit
+{
+  color: rgb(130,180,255);
+}
+.yearsummary .year table
+{
+  margin-bottom: 5px;
+  border-collapse: collapse;
+  white-space: nowrap;
+  width: 100%;
+}
+.yearsummary .year table td
+{
+  font-size: 12px;
+  padding: 0;
+}
+
+.yearsummary .year table td:not(:first-child),
+.yearsummary .year table th:not(:first-child)
+{
+  text-align: right;
+}
+.yearsummary .year .header
+{
+  cursor: pointer;
+}
+.yearsummary .year .header:hover
+{
+  background: rgba(255,255,255,0.2);  
+}
+.yearsummary .year .header table td
+{
+  margin: 0;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(220,220,220);
+}
+.yearsummary .numth
+{
+  font-size: 10px;
+  float: right;
+  vertical-align: top;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.version
+{
+  color: rgb(120,120,120);
+}
+

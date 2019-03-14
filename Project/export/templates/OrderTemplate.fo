@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:j4lif="http://java4less.com/fop/iform" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:j4lext="xalan://com.java4less.xreport.fop.XLSTExtension" extension-element-prefixes="j4lext j4luserext" xmlns:j4luserext="xalan://com.java4less.xreport.fop.XLSTDummyExtension" xmlns:java="http://xml.apache.org/xslt/java" exclude-result-prefixes="java" >
+  <xsl:template match="/">
+    <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+      <fo:layout-master-set>
+        <fo:simple-page-master master-name="master0" page-width="21.0cm" page-height="29.7cm" margin-top="1.0cm" margin-bottom="1.0cm" margin-left="1.0cm" margin-right="1.0cm" >
+          <fo:region-body region-name="body0" margin-top="4.4cm" margin-bottom="1cm" />
+          <fo:region-before region-name="header0" extent="4.4cm"/>
+          <fo:region-after region-name="footer0" extent="1cm"/>
+        </fo:simple-page-master>
+      </fo:layout-master-set>
+      <fo:page-sequence master-reference="master0">
+        <fo:static-content flow-name="header0">
+          <!-- d609a580f10c41569d7b3c8ad7b1ba6f -->
+          <fo:table width="19.0cm" border-bottom="solid 2pt black">
+            <fo:table-column column-width="9.49cm"/>
+            <fo:table-column column-width="9.51cm"/>
+            <fo:table-body>
+              <fo:table-row background-color="#ffffff" height="0.49cm" >
+                <fo:table-cell number-columns-spanned="2">
+                  <!-- 70f7b5264c4c400da923fd8b0fe7323b -->
+                  <fo:block border-bottom-color="#000000" border-bottom-style="solid" border-bottom-width="medium" margin-left="0.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="15pt" font-family="Arial" font-weight="bold" color="#000000" text-align="center">
+                    <fo:inline letter-spacing="3pt">OBJEDNÁVKA PŘEPRAVY</fo:inline>č.
+                    <xsl:value-of select="fullorder/or_order/oror_cisloobj"></xsl:value-of>/
+                    <xsl:value-of select="fullorder/or_order/oror_cisloobjrok"></xsl:value-of>- uvádějte při fakturaci!</fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+              <fo:table-row background-color="#ffffff" height="3.61cm" >
+                <fo:table-cell number-columns-spanned="1">
+                  <!-- d019a8ed10fe47a9b402a0b0d336f4ee -->
+                  <fo:block margin-left="0.8cm" margin-right="0.0cm" margin-top="0.5cm" font-size="9pt" font-family="Arial" color="#000000" font-weight="bold" text-align="center">
+                    <fo:block>Zdeněk Mráček AUTODOPRAVA</fo:block>
+                    <fo:block>Vápenická 2368/24, 591 01 Žďár nad Sázavou</fo:block>
+                    <fo:block>Tel. +420 731 19 77 11</fo:block>
+                    <fo:block>IČO: 75613107, DIČ:CZ7410134776</fo:block>
+                    <fo:block>Zápis do ŽR MěÚ Žďár nad Sázavou, MU/OŽ/1525</fo:block>
+                    <fo:block>www.mracekdoprava.cz</fo:block>
+                    <fo:block>RAAL: B3W</fo:block>
+                  </fo:block>
+                </fo:table-cell>
+                <fo:table-cell number-columns-spanned="1">
+                  <!-- c2b7fdab12aa46628bfbd0a8e14b293c -->
+                  <fo:block margin-left="0.8cm" margin-right="0.0cm" margin-top="0.2cm">
+                    <fo:external-graphic content-height="scale-to-fit" height="3.2cm">
+                      <xsl:attribute name="src">
+                        <xsl:value-of select="'file:///c:/Apache24/htdocs/images/logo2.png'"></xsl:value-of>
+                      </xsl:attribute>
+                    </fo:external-graphic>
+                  </fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+            </fo:table-body>
+          </fo:table>
+        </fo:static-content>
+        <fo:static-content flow-name="footer0">
+          <!-- f7a483875d1e4abab6006446a3831f63 -->
+          <fo:table width="19.0cm" >
+            <fo:table-column column-width="19.0cm"/>
+            <fo:table-body>
+              <fo:table-row background-color="#ffffff" height="1cm">
+                <fo:table-cell>
+                  <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="8pt" font-family="SansSerif" color="#000000" text-align="right">List:
+                    <fo:page-number></fo:page-number>/
+                    <fo:page-number-citation ref-id="last-page"/>
+                  </fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+              <fo:table-row background-color="#ffffff">
+                <fo:table-cell>
+                  <fo:block margin-left="1.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="8pt" font-family="SansSerif" color="#000000" text-align="left">Datum:
+                    <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('d.M.yyyy'), java:java.util.Date.new())"/>
+                  </fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+            </fo:table-body>
+          </fo:table>
+        </fo:static-content>
+        <fo:flow flow-name="body0">
+          <!-- START Area Header -->
+          <!-- 37c399f43b124898a6c442bf4b1b3c24 -->
+          <fo:table width="19.0cm" >
+            <fo:table-column column-width="4.0cm"/>
+            <fo:table-column column-width="15.0cm"/>
+            <fo:table-body>
+              <fo:table-row background-color="#ffffff" height="-0.22cm" >
+                <fo:table-cell number-columns-spanned="1">
+                  <fo:block></fo:block>
+                </fo:table-cell>
+                <fo:table-cell number-columns-spanned="1">
+                  <fo:block></fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+              <fo:table-row>
+                <fo:table-cell number-columns-spanned="2">
+                  <fo:block>
+                    <!-- START Area Detail 1 -->
+                    <!-- 093271fdabb5406081ffcc6f40c03439 -->
+                    <fo:table width="19.0cm" margin-top="0.4cm">
+                      <fo:table-column column-width="-0.14cm"/>
+                      <fo:table-column column-width="8.19cm"/>
+                      <fo:table-column column-width="10.95cm"/>
+                      <!-- e03f87440cda4383bb5c6aadd72f8639 -->
+                      <fo:table-header>
+                        <fo:table-row background-color="#ffffff" height="-0.22cm" >
+                          <fo:table-cell number-columns-spanned="1">
+                            <fo:block></fo:block>
+                          </fo:table-cell>
+                          <fo:table-cell number-columns-spanned="1">
+                            <fo:block></fo:block>
+                          </fo:table-cell>
+                          <fo:table-cell number-columns-spanned="1">
+                            <fo:block></fo:block>
+                          </fo:table-cell>
+                        </fo:table-row>
+                      </fo:table-header>
+                      <fo:table-body>
+                        <fo:table-row background-color="#ffffff" height="4.54cm" >
+                          <fo:table-cell number-columns-spanned="1">
+                            <fo:block></fo:block>
+                          </fo:table-cell>
+                          <fo:table-cell number-columns-spanned="1">
+                            <fo:block></fo:block>
+                          </fo:table-cell>
+                          <fo:table-cell number-columns-spanned="1">
+                            <!-- 3babf5fd86b342bf8e408a5213bc425d -->
+                            <fo:table space-before="9.0cm" width="8.6cm" border-style="solid" border-width="0.5mm" border-color="black">
+                              <fo:table-column column-width="0.3cm"/>
+                              <fo:table-column column-width="1.8cm"/>
+                              <fo:table-column column-width="4cm"/>
+                              <fo:table-column column-width="4cm"/>
+                              <fo:table-column column-width="0.0cm"/>
+                              <!-- 3928ce12247a41fd99c097edd92386cb -->
+                              <fo:table-header>
+                                <fo:table-row background-color="#ffffff" height="0.5cm" >
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                </fo:table-row>
+                              </fo:table-header>
+                              <fo:table-body>
+                                <fo:table-row background-color="#ffffff">
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <!-- 5a70ee3c12a64ed5998036153be51e61 -->
+                                    <fo:block font-size="10pt" font-family="SansSerif" color="#000000" text-align="left">Dopravce:</fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="2">
+                                    <!-- 144612a8e6ee44aaa9499cb539764df8 -->
+                                    <fo:block font-size="12pt" font-family="Arial" color="#000000" text-align="left" font-weight="bold">
+                                      <xsl:value-of select="fullorder/or_order/oror_doprfirma"></xsl:value-of>
+                                    </fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                </fo:table-row>
+                                <fo:table-row background-color="#ffffff">
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="2">
+                                    <!-- 144612a8e6ee44aaa9499cb539764df8 -->
+                                    <fo:block font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                      <xsl:value-of select="fullorder/or_order/oror_doprulice"></xsl:value-of>
+                                    </fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                </fo:table-row>
+                                <fo:table-row background-color="#ffffff" >
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="2">
+                                    <!-- 9b4469a025184d88b93b85f2a45eea0d -->
+                                    <fo:block font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                      <xsl:value-of select="fullorder/or_order/oror_doprstat"></xsl:value-of>-
+                                      <xsl:value-of select="fullorder/or_order/oror_doprpsc"></xsl:value-of>&#160;
+                                      <xsl:value-of select="fullorder/or_order/oror_doprmesto"></xsl:value-of>
+                                    </fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                </fo:table-row>
+                                <fo:table-row background-color="#ffffff" >
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="2">
+                                    <!-- 9b4469a025184d88b93b85f2a45eea0d -->
+                                    <fo:block font-size="10pt" font-family="Arial" color="#000000" text-align="left">IČ:
+                                      <xsl:value-of select="fullorder/or_order/oror_dopric"></xsl:value-of>&#160;&#160;DIČ:
+                                      <xsl:value-of select="fullorder/or_order/oror_doprdic"></xsl:value-of>
+                                    </fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                </fo:table-row>
+                                <fo:table-row background-color="#ffffff" height="0.95cm">
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <!-- 5fa1f87d4bc7405794305366ecd8757a -->
+                                    <fo:block margin-top="0.4cm" font-size="10pt" font-family="Arial" color="#000000">SPZ:&#160;
+                                      <xsl:value-of select="fullorder/or_order/oror_doprspz"></xsl:value-of>
+                                    </fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <!-- 5fa1f87d4bc7405794305366ecd8757a -->
+                                    <fo:block margin-top="0.4cm" font-size="10pt" font-family="Arial" color="#000000">Tel:&#160;
+                                      <xsl:value-of select="fullorder/or_order/oror_doprtel"></xsl:value-of>
+                                    </fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                </fo:table-row>
+                                <fo:table-row background-color="#ffffff">
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <!-- 7b6348f0d25a44798f4d4fef42bd4f20 -->
+                                    <fo:block font-size="10pt" font-family="Arial" color="#000000">RAAL:&#160;
+                                      <xsl:value-of select="fullorder/or_order/oror_raal"></xsl:value-of>
+                                    </fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <!-- 7b6348f0d25a44798f4d4fef42bd4f20 -->
+                                    <fo:block font-size="10pt" font-family="Arial" color="#000000">Kontakt:&#160;
+                                      <xsl:value-of select="fullorder/or_order/oror_doprjmeno"></xsl:value-of>
+                                    </fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                </fo:table-row>
+                                <fo:table-row background-color="#ffffff" height="0.5cm">
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                  <fo:table-cell number-columns-spanned="1">
+                                    <fo:block></fo:block>
+                                  </fo:table-cell>
+                                </fo:table-row>
+                              </fo:table-body>
+                            </fo:table>
+                          </fo:table-cell>
+                        </fo:table-row>
+                      </fo:table-body>
+                    </fo:table>
+                    <!-- END Area Detail 1 -->
+                  </fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+              <fo:table-row>
+                <fo:table-cell number-columns-spanned="2">
+                  <fo:block>
+                    <!-- START Area Detail 3 -->
+                    <xsl:if test="fullorder/transport" >
+                      <!-- bc894ec0302a49f59390c2ef5d9ec186 -->
+                      <!--<fo:block font-size="0.5cm" margin-bottom="0.3cm">Přepravy:</fo:block>-->
+                      <xsl:for-each select="fullorder/transport">
+                        <fo:table page-break-inside="avoid" width="19cm" border-style="solid" border-width="0.7mm" border-color="black" margin-bottom="0.5cm">
+                          <fo:table-column column-width="8.9cm"/>
+                          <fo:table-column column-width="0.3cm"/>
+                          <fo:table-column column-width="8.9cm"/>
+                          <!-- aacf801b6a994324b7296ee8c04bb625 -->
+                          <fo:table-header>
+                            <fo:table-row background-color="#ffffff" height="-0.22cm" >
+                              <fo:table-cell number-columns-spanned="1">
+                                <fo:block></fo:block>
+                              </fo:table-cell>
+                              <fo:table-cell number-columns-spanned="1">
+                                <fo:block></fo:block>
+                              </fo:table-cell>
+                            </fo:table-row>
+                          </fo:table-header>
+                          <fo:table-body>
+                            <fo:table-row background-color="#ffffff">
+                              <fo:table-cell number-columns-spanned="1">
+                                <!-- ef2d4dcb45594107b9a64ce2ac79e0a3 -->
+                                <fo:table>
+                                  <fo:table-column column-width="0.5cm"/>
+                                  <fo:table-column column-width="2.0cm"/>
+                                  <fo:table-column column-width="6.5cm"/>
+                                  <!-- aacf801b6a994324b7296ee8c04bb625 -->
+                                  <fo:table-header>
+                                    <fo:table-row background-color="#ffffff" height="0.3cm" >
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                    </fo:table-row>
+                                  </fo:table-header>
+                                  <fo:table-body>
+                                    <fo:table-row background-color="#ffffff">
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">Nakládka:</fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="2.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="nakl/or_spot/orspt_cas1"></xsl:value-of>
+                                          <xsl:if test="nakl/or_spot/orspt_cas1/text()">&#160;</xsl:if>
+                                          <xsl:value-of select="nakl/or_spot/orspt_date"></xsl:value-of>&#160;
+                                          <xsl:value-of select="nakl/or_spot/orspt_cas3"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <fo:table-row background-color="#ffffff">
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="9pt" font-family="Arial" color="#000000" text-align="left">Adresa:</fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="2.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="nakl/or_spot/orspt_firma"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <xsl:if test="nakl/or_spot/orspt_firma2/text()">
+                                      <fo:table-row background-color="#ffffff">
+                                        <fo:table-cell number-columns-spanned="1">
+                                          <fo:block></fo:block>
+                                        </fo:table-cell>
+                                        <fo:table-cell number-columns-spanned="1">
+                                          <fo:block></fo:block>
+                                        </fo:table-cell>
+                                        <fo:table-cell number-columns-spanned="1">
+                                          <fo:block margin-left="0.0cm" margin-right="2.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                            <xsl:value-of select="nakl/or_spot/orspt_firma2"></xsl:value-of>
+                                          </fo:block>
+                                        </fo:table-cell>
+                                      </fo:table-row>
+                                    </xsl:if>
+                                    <fo:table-row background-color="#ffffff">
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="2.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="nakl/or_spot/orspt_ulice"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <fo:table-row background-color="#ffffff" >
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="nakl/or_spot/orspt_stat"></xsl:value-of>-
+                                          <xsl:value-of select="nakl/or_spot/orspt_psc"></xsl:value-of>&#160;
+                                          <xsl:value-of select="nakl/or_spot/orspt_mesto"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <fo:table-row background-color="#ffffff" height="0.1cm" >
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                  </fo:table-body>
+                                </fo:table>
+                              </fo:table-cell>
+                              <fo:table-cell number-columns-spanned="1">
+                                <fo:block></fo:block>
+                              </fo:table-cell>
+                              <fo:table-cell number-columns-spanned="1">
+                                <fo:table>
+                                  <fo:table-column column-width="0.0cm"/>
+                                  <fo:table-column column-width="2.0cm"/>
+                                  <fo:table-column column-width="6.5cm"/>
+                                  <!-- aacf801b6a994324b7296ee8c04bb625 -->
+                                  <fo:table-header>
+                                    <fo:table-row background-color="#ffffff" height="0.3cm" >
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                    </fo:table-row>
+                                  </fo:table-header>
+                                  <fo:table-body>
+                                    <fo:table-row background-color="#ffffff">
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">Vykládka:</fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="2.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="vykl/or_spot/orspt_cas1"></xsl:value-of>
+                                          <xsl:if test="vykl/or_spot/orspt_cas1/text()">&#160;</xsl:if>
+                                          <xsl:value-of select="vykl/or_spot/orspt_date"></xsl:value-of>&#160;
+                                          <xsl:value-of select="vykl/or_spot/orspt_cas3"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <fo:table-row background-color="#ffffff">
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="9pt" font-family="Arial" color="#000000" text-align="left">Adresa:</fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="2.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="vykl/or_spot/orspt_firma"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <xsl:if test="vykl/or_spot/orspt_firma2/text()">
+                                      <fo:table-row background-color="#ffffff">
+                                        <fo:table-cell number-columns-spanned="1">
+                                          <fo:block></fo:block>
+                                        </fo:table-cell>
+                                        <fo:table-cell number-columns-spanned="1">
+                                          <fo:block></fo:block>
+                                        </fo:table-cell>
+                                        <fo:table-cell number-columns-spanned="1">
+                                          <fo:block margin-left="0.0cm" margin-right="2.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                            <xsl:value-of select="vykl/or_spot/orspt_firma2"></xsl:value-of>
+                                          </fo:block>
+                                        </fo:table-cell>
+                                      </fo:table-row>
+                                    </xsl:if>
+                                    <fo:table-row background-color="#ffffff">
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="2.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="vykl/or_spot/orspt_ulice"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <fo:table-row background-color="#ffffff" >
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="vykl/or_spot/orspt_stat"></xsl:value-of>-
+                                          <xsl:value-of select="vykl/or_spot/orspt_psc"></xsl:value-of>&#160;
+                                          <xsl:value-of select="vykl/or_spot/orspt_mesto"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <fo:table-row background-color="#ffffff" height="0.1cm" >
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block></fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                  </fo:table-body>
+                                </fo:table>
+                              </fo:table-cell>                              
+                            </fo:table-row>                            
+                            <fo:table-row background-color="#ffffff" height="0.49cm" border-top-style="solid" border-top-width="0.2mm" border-top-color="black">
+                              <fo:table-cell number-columns-spanned="3">
+                                <fo:block></fo:block>
+                              </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row background-color="#ffffff" height="0.46cm" >
+                              <fo:table-cell number-columns-spanned="3">
+                                <fo:table>
+                                  <fo:table-column column-width="0.5cm"/>
+                                  <fo:table-column column-width="2cm"/>
+                                  <fo:table-column column-width="15cm"/>
+                                  <fo:table-body>
+                                    <fo:table-row background-color="#ffffff" height="0.49cm" >
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="1.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          Zboží:
+                                        </fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="1.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="or_objnaklvykl/oronv_zbozipopis"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <fo:table-row background-color="#ffffff" height="0.49cm" >
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="1.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          Hmotnost:
+                                        </fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="1.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          cca&#160;<xsl:value-of select="or_objnaklvykl/oronv_vaha"></xsl:value-of>&#160;kg
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <fo:table-row background-color="#ffffff" height="0.49cm" >
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="1.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          ADR:
+                                        </fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="1.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="or_objnaklvykl/oronv_poznadr"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                    <fo:table-row background-color="#ffffff" height="0.49cm" >
+                                      <fo:table-cell number-columns-spanned="1"><fo:block></fo:block></fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="1.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          Poznámka:
+                                        </fo:block>
+                                      </fo:table-cell>
+                                      <fo:table-cell number-columns-spanned="1">
+                                        <fo:block margin-left="0.0cm" margin-right="1.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                                          <xsl:value-of select="or_objnaklvykl/oronv_poznobj"></xsl:value-of>
+                                        </fo:block>
+                                      </fo:table-cell>
+                                    </fo:table-row>
+                                  </fo:table-body>
+                                </fo:table>
+                              </fo:table-cell>
+                            </fo:table-row>
+                            <fo:table-row background-color="#ffffff" height="0.22cm" >
+                              <fo:table-cell number-columns-spanned="3">
+                                <fo:block></fo:block>
+                              </fo:table-cell>
+                            </fo:table-row>
+                          </fo:table-body>
+                        </fo:table>                        
+                      </xsl:for-each>
+                    </xsl:if>
+                    <!-- END Area Detail 3 -->
+                  </fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+              <fo:table-row>
+                <fo:table-cell number-columns-spanned="2">
+                  <fo:block>
+                    <fo:table width="19.0cm" >
+                      <fo:table-column column-width="2.4cm"/>
+                      <fo:table-column column-width="15.0cm"/>
+                      <fo:table-body>
+                        <fo:table-row background-color="#ffffff">
+                          <fo:table-cell>
+                            <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">Další info:</fo:block>
+                          </fo:table-cell>
+                          <fo:table-cell>
+                            <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">
+                              <xsl:value-of select="fullorder/or_order/oror_dalsiinfo"></xsl:value-of>
+                            </fo:block>
+                          </fo:table-cell>
+                        </fo:table-row>
+                      </fo:table-body>
+                    </fo:table>
+                    <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.1cm" >
+                      <!-- 8288a1660e6944c097b8d9481d452bbb -->
+                      <fo:leader leader-pattern="rule" color="#000000" rule-thickness="1.0pt" rule-style="solid" leader-length="100%" />
+                    </fo:block>
+                    <!-- 76e9b54b8ee8409abb38be5e99a27137 -->
+                    <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.26cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">Po naložení a vyložení nás informujte SMS na mobil 731197711 nebo 606079210,</fo:block>
+                    <!-- 76e9b54b8ee8409abb38be5e99a27137 -->
+                    <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.2cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">nebo e-mailem na info@mracekdoprava.cz!!!</fo:block>
+                    <!-- 76e9b54b8ee8409abb38be5e99a27137 -->
+                    <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.2cm" font-size="10pt" font-family="Arial" color="#000000" text-align="left">V případě problému nebo při změně v průběhu přepravy nás ihned informujte!!!!!!</fo:block>
+                    <!-- 76e9b54b8ee8409abb38be5e99a27137 -->
+                    <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.52cm" font-size="11pt" font-family="Arial" font-weight="bold" color="#000000" text-align="left">Děkujeme za spolupráci a přejeme šťastnou cestu!</fo:block>
+                    <!-- 76e9b54b8ee8409abb38be5e99a27137 -->
+                    <fo:block margin-left="0.0cm" margin-right="0.0cm" margin-top="0.5cm" font-size="11pt" font-family="Arial" font-weight="bold" color="#000000" text-align="left">Podmínky přepravy, smluvní ujednání:</fo:block>
+                    <fo:block font-size="8.5pt" font-family="Arial">1)Dopravce musí mít platné pojištění odpovědnosti dopravce ve smyslu Úmluvy CMR, které kryje plně jeho odpovědnost. Dopravce nese plnou odpovědnost za technický stav vozu a čistotu a neporušení ložného prostoru..
+                      <fo:block/>2)Bez písemného souhlasu objednavatele nesmí být k nákladu nic doloženo nebo zboží přeloženo na jiné vozidlo a ani dopravce nesmí použít k provedení přepravy jiného dopravce bez písemného souhlasu objednavatele.
+                      <fo:block/>3)V případě problémů a nejasností během přepravy, včetně zdržení či váhových rozdílů je dopravce povinen neprodleně informovat objednavatele. V případě váhového rozdílu je nutné informovat objednavatele pro zajištění druhého vážení, dále zapsat do CMR výhradu o způsobu vážení, povětrnostních podmínkách (váženo za větru, přitomnost vratných obalů, nakládka za deště...). v případě, že tak dopravce neučiní, bude váhový rozdíl uplatňován na něm. Dopravce je povinen informovat objednavatele o jakémkoliv rozporu při průběhu přepravy s touto objednávkou objednavatele a průběžně informovat objednavatele o průběhu přepravy (přesný termín nakládky, zaclení,vyclení, vykládky apod.)
+                      <fo:block/>4)Přepravní smlouva nabývá platnosti i bez písemného zpětného potvrzení, pokud je vozidlo přistaveno k nakládce.
+                      <fo:block/>5)Doba splatnosti faktury je uvedena níže v objednávce. Podmínkou úhrady je obdržení 2 ks potvrzených originálů CMR, příjemcem, odesilatelem a řidičem podepsané vážní lístky a faktury. Všechny doklady musí být náležitě orazítkovány běžným způsobem. Dopravce je povinen doručit objednavateli fakturu spolu s požadovanými doklady do 7 dnů po ukončení přepravy. V případě, že nebude dodržen termín této povinnosti, nebo některá z uvedených podmínek, je sjednána smluvní pokuta ve výši 30% z ceny přepravy.
+                      <fo:block/>6)Prostoje, za které nese odpovědnost objednavatel, budou propláceny pouze paušální částkou, a to pouze v případě, že budou náležitě doloženy potvrzením o prostojích a objednavatel bude o prostoji informován písemně do 24 hodin. Tato částka bude stanoveno domluvou.
+                      <fo:block/>7)Dopravce má povinnost být účasten nakládky a vykládky, zkontrolovat počet kusů a označení zásilky, zjevný stav zásilky a způsob uložení zásilky na vozidle. V případě, že nebude moci dopravce toto provést, tak učiní písemnou výhradu do nákladního listu CMR, nikoliv pouze čísly, ale slovně. Stejně tak bude dopravce postupovat při špatném uložení zásilky, kde nejdříve upozorní odesílatele a pokud odesílatel nepřeloží zásilku, tak informuje dopravce objednavatele a učiní písemnou výhradu do CMR.
+                      <fo:block/>8)Dopravce je povinen mít k dispozici u nakládky potřebné zajišťovací materiály na upevnění nákladu, podle uváděného druhu nákladu. Případně je povinen si u nakládky zajistit tento materiál, aby byla zásilka zajištěna v souladu s bezpečnostními předpisy. Dopravce je povinen řádně provést veškerá celní a obdobná řízení prováděná při vykonávání přepravy. Pokud objednavatel uzavře přepravní smlouvu s dopravcem a vznikne nějaká škoda z důvodu chybného provedení celního nebo obdobného řízení slibuje dopravce, že nahradí takovéto škody.
+                      <fo:block/>9)Uvedená cena za přepravu je smluvní cena, ve které jsou zahrnuty veškeré poplatky související s přepravou zásilky. Dopravce má nárok na zaplacení výše uvedené smluvní ceny za přepravu pouze za předpokladu, že dodrží všechny podmínky a termíny přepravy, jinak má nárok na přepravné ve výši prokázaných nutných nákladů do poloviční výše původní smluvní ceny za přepravu.
+                      <fo:block/>10)Pokud dopravce nedodrží smluvené termíny nakládky a vykládky, je mezi oběma stranami smluvena smluvní pokuta ve výši ceny přepravy. Pokud dopravce poruší podmínku č. 3 této objednávky, je sjednána smluvní pokuta ve výši 20ti násobku ceny přepravy.
+                      <fo:block/>11)Kontakt se zákazníkem nad rámec povinností vyplývajících z této přepravy bude posuzován jako konkurenční jednání, a to i jeden rok po ukončení přepravy. Zákazníkem se rozumí jakýkoliv subjekt práva, jehož identita byla dopravci sdělena při sjednávání nebo plnění přepravní smlouvy, popřípadě byla uvedena v dokladech daných dopravci k dispozici. Pro případ konkurenčního jednání dopravce je sjednána smluvní pokuta, její výši si strany dohodly ve výši 100 násobku ceny přepravy. Pro případné majetkové spory plynoucí z této objednávky se dohodly ve smyslu paragrafu 3 odst. 2 zákoníka 216/1994 Sb. na rozhodci: právní zastoupení a vykonávací soud Praha ČR, platí české právo
+                      <fo:block/>12)Smluvní poměry mezi stranami se řídí Obchodním zákoníkem a dalšími příslušnými právními předpisy.
+                      <fo:block/>13)Všechna ustanovení o smluvní pokutě v této objednávce přepravy nemají vliv na případnou náhradu škody.
+                      <fo:block/>14) Čekání na nakládce a vykládce do 24hod od příjezdu auta zdarma. Čekání musí být doloženo zápisem v CMR listě (čas příjezdu, odjezdu).</fo:block>
+                    <!-- END Area Detail 4 -->
+                  </fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+              <fo:table-row>
+                <fo:table-cell number-columns-spanned="2">
+                  <fo:block page-break-inside="avoid">
+                    <!-- START Area Footer -->
+                    <!-- 6b900e7a7a514f93a1321fb8e37ac235 -->
+                    <fo:table margin-top="0.5cm" width="19.0cm" >
+                      <fo:table-column column-width="3.0cm"/>
+                      <fo:table-column column-width="16.0cm"/>
+                      <fo:table-body>
+                        <fo:table-row background-color="#ffffff" height="1.0cm">
+                          <fo:table-cell>
+                            <fo:block font-size="15pt" font-weight="bold">Sml.cena:</fo:block>
+                          </fo:table-cell>
+                          <fo:table-cell>
+                            <fo:block font-size="15pt" font-weight="bold">
+                              <xsl:value-of select="fullorder/or_order/oror_smlcenatext"></xsl:value-of>&#160;+DPH (ALL-IN)</fo:block>
+                          </fo:table-cell>
+                        </fo:table-row>
+                      </fo:table-body>
+                    </fo:table>
+                    <fo:block font-size="9pt" font-weight="bold">Splatnost: 60 dní od doručení faktury</fo:block>
+                    <fo:table margin="0cm" width="19.0cm" >
+                      <fo:table-column column-width="11.0cm"/>
+                      <fo:table-column column-width="8.0cm"/>
+                      <fo:table-body>
+                        <fo:table-row background-color="#ffffff" height="1.0cm">
+                          <fo:table-cell>
+                            <fo:block font-size="10pt" font-weight="bold">
+                              <fo:block>Poznámky:</fo:block>
+                              <fo:block>Toto cenové ujednání nedávejte řidiči s sebou na nakládku!!!</fo:block>
+                              <fo:block>Fakturu prosím neposílejte doporučeně!!!</fo:block>
+                              <fo:block margin-top="0.5cm">S pozdravem Zdeněk Mráček</fo:block>
+                              <fo:block>Tel: +420 731 197 711, +420 606 079 210</fo:block>
+                              <fo:block>E-mail: info@mracekdoprava.cz</fo:block>
+                              <fo:block>www.mracekdoprava.cz</fo:block>
+                            </fo:block>
+                          </fo:table-cell>
+                          <fo:table-cell>
+                            <fo:block margin-left="1cm" margin-right="0.0cm" margin-top="1cm">
+                              <fo:external-graphic content-height="scale-to-fit" height="2.5cm">
+                                <xsl:attribute name="src">
+                                  <xsl:value-of select="'file:///c:/Apache24/htdocs/images/razitko.png'"></xsl:value-of>
+                                </xsl:attribute>
+                              </fo:external-graphic>
+                            </fo:block>
+                          </fo:table-cell>
+                        </fo:table-row>
+                      </fo:table-body>
+                    </fo:table>
+                    <!-- END Area Footer -->
+                  </fo:block>
+                </fo:table-cell>
+              </fo:table-row>
+            </fo:table-body>
+          </fo:table>
+          <!-- END Area Header -->
+          <fo:block id="last-page"/>
+        </fo:flow>
+      </fo:page-sequence>
+    </fo:root>
+  </xsl:template>
+</xsl:stylesheet>

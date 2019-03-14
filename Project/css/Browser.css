@@ -1,0 +1,491 @@
+.browser
+{
+  background: rgb(230,230,230);
+  height: calc(100% - 40px);
+  overflow: auto;
+  font-size: 11px;
+  position: relative;
+}
+/* nastaveni tabulky */
+.browsersummary table,
+.browser table
+{
+  border-collapse: collapse;
+}
+/* ohraniceni */
+.browsersummary table td,
+.browsersummary table th,
+.browser table td,
+.browser table th
+{
+  border: 1px solid rgb(210,210,210);
+  vertical-align: middle;
+  white-space: nowrap;
+  background: white;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.browsersummary table td img,
+.browser table td img
+{
+  height: 15px;
+}
+browsersummary table th,
+.browser table th
+{
+  vertical-align: top;  
+}
+.browser table td
+{
+  text-align: left;
+}
+/* fialova barva */
+.browsersummary table thead th,
+.browsersummary table tbody tr td:first-child,
+.browser table thead th,
+.browser table tbody tr td:first-child
+{
+  padding: 5px;
+  font-weight: bold;
+  background: rgb(150,150,200);
+  border-color: black;
+  color: white;
+  border-top: none;    
+}
+
+/* alternijuci zbarveni radku */
+.browsersummary table tbody tr:nth-child(even) td:not(:first-child),
+.browser table tbody tr:nth-child(even) td:not(:first-child)
+{
+  background: rgb(239,239,239);
+}
+/* zvirazneni vybraneho */
+.browsersummary table tbody tr.selected td:not(:first-child),
+.browser table tbody tr.selected td:not(:first-child)
+{
+  /*
+  background-color: rgb(255,255,150);
+  */
+  border-right: rgb(255,255,0);
+  -webkit-box-shadow: inset 0px 0px 0px 100px rgba(255,255,0,0.5);
+     -moz-box-shadow: inset 0px 0px 0px 100px rgba(255,255,0,0.5);
+          box-shadow: inset 0px 0px 0px 100px rgba(255,255,0,0.5);
+}
+.browsersummary table tbody tr.selected td:first-child,
+.browser table tbody tr.selected td:first-child
+{
+  color: rgb(255,255,50);
+}
+.browser tbody tr:hover:not(.selected) > td:not(:first-child)
+{
+  border-right: rgba(100,180,255,0.5);
+  -webkit-box-shadow: inset 0px 0px 0px 100px rgba(100,180,255,0.2);
+     -moz-box-shadow: inset 0px 0px 0px 100px rgba(100,180,255,0.2);
+          box-shadow: inset 0px 0px 0px 100px rgba(100,180,255,0.2);
+}
+.browser table tbody tr.haveall
+{
+  height: 30px;
+}
+.toolbar
+{
+  border: 1px solid rgb(210,210,210);
+  padding: 5px;
+  font-weight: bold;
+  background: rgb(150,150,200);
+  border-color: black;
+  color: white;
+  z-index: 1;
+  width: calc(100% - 12px);
+  border-top: none;
+}
+.toolbar .clearfiletrs
+{
+  float: right;
+}
+.toolbar button
+{
+  height: 27px;
+  padding: 3px;
+  color: #24292e;
+  border: 1px solid rgba(27,31,35,0.2);
+  cursor: pointer;
+  border-radius: 0.25em;
+  background-color: #eff3f6;
+  background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
+  background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+}
+.toolbar button:hover
+{
+  background-color: #e6ebf1;
+  background-image: -webkit-linear-gradient(270deg, #f0f3f6 0%, #e6ebf1 90%);
+  background-image: linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
+  background-position: 0 -0.5em;
+  border-color: rgba(27,31,35,0.35);
+}
+.toolbar button span
+{
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  vertical-align: top;
+}
+.toolbar button img
+{
+  vertical-align: top;
+  height: 16px;  
+}
+.browser .zisk
+{
+  color: #1be145;
+  font-size: 15px;
+  font-weight: bold;
+}
+.browser table div > img
+{
+  height: 15px;
+}
+.browser thead .headcol
+{
+  padding: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  vertical-align: top;
+}
+.browser thead .headcol span
+{
+  padding-left: 3px;
+  padding-right: 3px;  
+}
+.headcol .filter
+{
+  display: table;
+  margin: auto;
+}
+.headcol .filter > div
+{
+  display: table-cell;
+  margin: 0;
+  vertical-align: top;
+}
+.headcol .filter input[type=text],
+.headcol .filter input[type=number],
+.headcol .filter select
+{
+  height: 10px;
+  font-size: 11px;
+  margin: 0;
+  width: 90%;
+}
+.headcol .filter input[type=number]
+{
+  min-width: 30px;
+}
+.headcol .filter select
+{
+  font-size: 13px;
+  height: 16px;
+  min-width: 0;
+  width: 38px;
+  text-align: center;
+  text-align-last: center;
+}
+.headcol .filter select *
+{
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.headcol .filter .ordrbt
+{
+  height: 8px;
+  width: 10px;
+  cursor: pointer; 
+  padding-left: 2px;
+  padding-right: 3px;
+}
+.headcol .filter .ordrbt:hover
+{
+  background: rgba(255,255,255,0.8);
+}
+.headcol .filter .ordrbt img
+{
+  height: 6px;  
+}
+.headcol .filter .datefilter
+{
+  cursor: pointer;
+  padding: 3px;
+  padding-top: 0;
+}
+.headcol .filter .datefilter:hover
+{
+  background: rgba(255,255,255,0.3);
+}
+
+.rangedatepicker
+{
+  position: fixed;
+  background: white;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 4px;
+  /*background: rgb(150,150,200);*/
+  background: transparent;
+}
+.rangedatepicker .guickbuttons
+{
+  border-collapse: collapse;
+  width: calc(100% - 5px);
+  margin: auto;
+  table-layout: fixed;
+}
+.rangedatepicker .guickbuttons table td
+{
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  color: rgb(150,150,150);
+  font-weight: bold;
+  margin: 0;
+  border: none;
+  text-align: center;
+  border-radius: 10px;
+}
+.rangedatepicker .guickbuttons table td:hover
+{
+  background: rgba(0,0,255,0.1);
+  color: rgb(150,150,255);
+}
+.rangedatepicker .rangedatepickers
+{
+  border-collapse: collapse;
+  background: white;
+  padding: 0;
+  webkit-box-shadow: 0px 2px 5px 1px rgb(100,100,100);
+    -moz-box-shadow: 0px 2px 5px 1px rgb(100,100,100);
+         box-shadow: 0px 2px 5px 1px rgb(100,100,100);
+}
+.rangedatepicker .rangedatepickers td:first-child
+{
+  padding-right: 2px;
+}
+.rangedatepicker .rangedatepickers td
+{
+  background: white;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+.rangedatepicker .rangedatepickers td input
+{
+  border: none;
+}
+.rangedatepicker .rangedatepickers td input:focus
+{
+  outline: 0;
+}
+.rangedatepicker .rangedatepickers td > div:not(.datepicker)
+{
+  padding: 5px;
+}
+.rangedatepicker .rangedatepickers td > div:not(.datepicker) .exitbt
+{
+  float: right;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.rangedatepicker .rangedatepickers td > div:not(.datepicker) .exitbt img
+{
+  height: 15px;
+}
+.rangedatepicker .rangedatepickers td > div:not(.datepicker) > span
+{
+  margin-right: 5px;
+}
+.rangedatepicker .rangedatepickers td > div:not(.datepicker) > span,
+.rangedatepicker .rangedatepickers td > div:not(.datepicker) input
+{
+  font-size: 18px;
+  color: rgb(150,150,150);
+}
+.rangedatepicker .rangedatepickers td > div:not(.datepicker) input
+{
+  width: 170px;
+}
+.rangedatepicker .rangedatepickers .fromblock > div:first-child, 
+.rangedatepicker .rangedatepickers .toblock > div:first-child
+{
+  white-space: nowrap;
+  text-align: left;
+  font-size: 13px;
+  border: solid 1px rgba(128, 128, 128, 0.3);
+  border-bottom: none;
+}
+.inline
+{
+  width: 100%;
+}
+.flattheme.ui-datepicker
+{
+  background: white;
+  border: solid 1px rgba(128, 128, 128, 0.3);
+}
+.flattheme.ui-datepicker .ui-datepicker-group-first .ui-datepicker-calendar
+{
+  margin-right: 2px;
+}
+.flattheme.ui-datepicker .ui-datepicker-group-last .ui-datepicker-calendar
+{
+  margin-left: 2px;  
+}
+.flattheme.ui-datepicker a
+{
+  text-decoration: none;
+  color: black;
+}
+.flattheme.ui-datepicker table
+{
+  margin: 0px;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 1em;
+  cursor: pointer;
+}
+.flattheme.ui-datepicker table td
+{  
+  vertical-align: middle;
+  padding: 0;  
+}
+.flattheme.ui-datepicker .ui-state-default
+{
+  margin: 0;
+  vertical-align: middle;
+  line-height: 22px;
+  display: table-cell;
+  width: 32px;
+  height: 32px;  
+  background: white;
+}
+.flattheme.ui-datepicker .ui-state-default:hover
+{
+  background: rgba(0,0,255,0.1);
+}
+.flattheme.ui-datepicker .ui-state-disabled > *
+{
+  background-color: rgb(200, 200, 200);
+}
+.flattheme.ui-datepicker .ui-datepicker-other-month > *
+{
+  color: rgb(150,150,150);
+}
+.flattheme.ui-datepicker .ui-state-active
+{
+  outline-style: inset;
+  outline-color: rgba(255,100,10, 1);
+  outline-width: 2px;
+}
+.flattheme.ui-datepicker .ui-datepicker-today > *
+{
+  background: rgba(255,255,0,0.2);
+}
+
+.flattheme.ui-datepicker .ui-datepicker-today.ui-state-disabled > *
+{
+  background: rgb(230,230,150);
+}
+.flattheme.ui-datepicker .ui-datepicker-next
+{
+  float: right;
+}
+.flattheme.ui-datepicker .ui-datepicker-prev
+{
+  float: left;
+}
+.flattheme.ui-datepicker .ui-datepicker-header
+{
+  text-align: center;
+  height: 35px;  
+  vertical-align: middle;        
+}
+.flattheme.ui-datepicker .ui-datepicker-header
+{
+  color: #929292;
+  border-bottom: none;
+}
+.flattheme.ui-datepicker table thead th
+{
+  color: #929292;
+  font-size: 13px;  
+}
+.flattheme.ui-datepicker table tbody td
+{
+  border: solid 1px rgba(128, 128, 128, 0.3);
+}
+.ui-datepicker-title
+{
+  padding-top: 8px;
+  display: inline-block;  
+}
+.ui-datepicker-title > *
+{
+  font-weight: bold;
+  font-size: 13px;
+}
+.flattheme.ui-datepicker .ui-datepicker-next,
+.flattheme.ui-datepicker .ui-datepicker-prev
+{
+  color: #929292;
+  position: relative;
+  font-weight: bold;
+  font-size: 23px;
+  padding: 2px;
+  width: 20px;
+  cursor: pointer;
+  padding: 3px;  
+  line-height: 30px;
+}
+.flattheme.ui-datepicker .ui-datepicker-next:hover,
+.flattheme.ui-datepicker .ui-datepicker-prev:hover
+{
+  /*top: -3px;*/
+  font-size: 30px;
+}
+.browsersummary
+{
+  /*background: rgb(150,150,200);  */
+  /*color: white;*/
+  display: table;
+  white-space: nowrap;
+}
+.browsersummary > *
+{
+  display: table-cell;
+  vertical-align: top;  
+  padding: 3px;  
+  font-size: 12px;
+}
+.browsersummary > span
+{
+  padding-top: 17px;
+  font-size: 12px;
+  width: 100%;
+}
+.browsersummary > span > table
+{
+ 
+  width: 0;
+}
+.browsersummary > div .name
+{
+  font-weight: bold;
+  text-align: center;
+}
+.browsersummary > div .fistrow,
+.browsersummary > div .secrow
+{
+  text-align: right;
+}
+
+

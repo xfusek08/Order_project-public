@@ -1,0 +1,152 @@
+
+.custpage
+{
+  display: table;  
+  height: calc(100% - 35px);
+  padding-left: 5px;
+}
+.custpage > div
+{
+  display: table-cell;  
+  vertical-align: top;
+}
+.custpage > div > div
+{
+  display: block;
+}
+.custlist
+{
+  vertical-align: top;
+}
+.custlist > .conn
+{
+  display: block;
+  height: calc(100% - 19px); /* - cap outerheight */
+  background: white;
+  position: relative;
+  overflow-y: auto;
+  border: black 1px solid;
+  margin-right: 5px;
+  margin-top: 8px;
+}
+/*
+.custlist > .conn > .shadow
+{
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75) inset;
+    -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75) inset;
+          box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75) inset;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+*/
+.custlist > .conn > .customer
+{
+  /*
+  min-width: 100px;
+  -webkit-box-shadow: 0px 4px 2px -2px rgba(0,0,0,0.75);
+     -moz-box-shadow: 0px 4px 2px -2px rgba(0,0,0,0.75);
+          box-shadow: 0px 4px 2px -2px rgba(0,0,0,0.75);
+  */
+  display: table;
+  width: 100%;  
+}
+.custlist > .conn > .newcustomer,
+.custlist > .conn > .customer > div
+{
+  padding: 5px;
+  padding-left: 8px;
+  border-bottom: 1px solid rgb(120,120,120);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  display: table-cell;  
+  vertical-align: middle;
+}
+.custlist > .conn > .newcustomer
+{
+  display: block;
+  color: rgb(40,200,40);
+  border: none;
+}
+.custlist > .conn > .newcustomer:hover
+{
+  background-color: rgb(220,255,220);
+  background-image: -webkit-linear-gradient(270deg, rgb(220,255,220) 0%, rgb(255,255,255) 110%);
+  background-image: linear-gradient(-180deg, rgb(220,255,220) 0%, rgb(255,255,255) 110%);
+}
+.custlist > .conn > .newcustomer span
+{
+  vertical-align: top;
+  margin: 10px;
+  height: 20px;
+  line-height: 20px;
+}
+.custlist > .conn > .newcustomer img
+{
+  height: 20px;
+}
+.custlist > .conn > .customer > .colorprev
+{
+  padding-right: 8px;
+  max-width: 25px;
+  min-width: 25px;
+  width: 25px;
+}
+.custlist > .conn > .customer > .colorprev > div
+{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+.custlist > .conn > .customer:hover:not(.selected) > div
+{
+  background: rgb(255,255,200);  
+}
+.custlist > .conn > .newcustomer.selected,
+.custlist > .conn > .customer.selected > div
+{
+  background: rgb(255,255,130);  
+}
+.custpage > .detailconn > .cap
+{
+  padding-left: 8px;
+}
+.dbpageform
+{
+  padding: 0;
+}
+.conn table td > *
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+input.colorinput
+{
+  display: none;  
+  width: 0;
+}
+.evo-cp-wrap
+{
+  max-width: 20px;
+}
+/*
+.colorchoose > div
+{
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,1);
+          box-shadow: 0px 0px 3px 0px rgba(0,0,0,1);
+  cursor: pointer;
+}
+*/
+.browserconn
+{
+  /*
+  width: calc(100% - 35px);
+  */
+}
+.storagesconn
+{
+  width: 100%;  
+}

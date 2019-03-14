@@ -1,0 +1,210 @@
+
+.a4floatform
+{
+  visibility: hidden;   
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  top: 0;
+  left: 0;  
+  overflow: auto;
+}
+.a4ff_toolbar
+{
+  z-index: 1001;
+  background: rgb(150,150,150); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, rgb(150,150,150)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, rgb(150,150,150)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, rgb(150,150,150)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, rgb(150,150,150)); /* Standard syntax */
+  box-shadow:         0px 3px 1px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow:    0x 3px 1px -1px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 3px 1px -1px rgba(0,0,0,0.75);
+  height: 30px;
+  border-radius: 2px;  
+  position: fixed;
+  margin-top: 10px;
+  width: 793px;
+  left: calc(50% - 405px);
+}
+.a4ff_toolbar .a4ff_toolbar_exitbt
+{
+  float: right;
+}
+.a4ff_toolbar .a4ff_toolbar_exitbt img
+{
+  height: 18px;
+  padding: 3px;
+}
+.a4ff_toolbar > div
+{
+  display: inline-block;  
+  cursor: pointer;
+}
+.a4ff_toolbar .a4ff_toolbar_bt
+{
+  padding: 5px;
+  padding-right: 7px;
+  font-weight: bold;
+}
+.a4ff_toolbar .a4ff_toolbar_bt:hover
+{
+  background: -webkit-linear-gradient(white, rgb(100,100,100)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, rgb(100,100,100)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, rgb(100,100,100)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, rgb(100,100,100)); /* Standard syntax */  
+}
+.a4ff_toolbar .a4ff_toolbar_bt span
+{
+  vertical-align: middle;
+  line-height: 18px;
+  padding-left: 3px;
+}
+.a4ff_toolbar .a4ff_toolbar_bt img
+{
+  position: relative;
+  top: -1px;
+  vertical-align: middle;
+  height: 20px;
+  padding: 0px;
+  padding-right: 5px;
+}
+.a4floatform > .a4ff_content
+{
+  margin-top: 10px;
+  width: 100%;
+  height: calc(100% - 10px);
+  overflow: auto;  
+}
+.a4floatform > .a4ff_content > .a4ff_content_doc
+{
+  -webkit-transform-origin:center top;
+}
+.a4floatform .a4ff_a4list
+{
+  width: 773px;
+  height: 1160px;
+  max-height: 1160px;
+  background: white;
+  
+  padding: 8px;
+  
+  margin: auto;
+  margin-bottom: 15px;
+  
+  box-shadow:         3px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow:    3px 5px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.75);  
+}
+.a4floatform .a4ff_a4list:first-child
+{
+  margin-top: 30px;  
+}
+a4ff_data
+{
+  display: none;
+}
+.a4ff_resizebar
+{
+  display: inline-block;
+  position: fixed;  
+  z-index: 1001;
+  right: 25px;
+  bottom: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  background: rgb(150,150,150); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, rgb(150,150,150)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, rgb(150,150,150)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, rgb(150,150,150)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, rgb(150,150,150)); /* Standard syntax */
+}
+.a4ff_resizebar div
+{
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 35px;
+}
+.a4ff_resizebar div:first-child
+{
+  border-bottom: 2px solid rgb(150,150,150);
+}
+.a4ff_resizebar div:hover
+{
+  background: rgba(0,0,0,0.2);
+}
+.datalist
+{
+  background: rgb(250, 250,200);
+}
+#datalist
+{
+  position: fixed;
+  border: 2px solid rgba(50,151,253, 0.5);
+  overflow-y: auto;
+  background: white;
+  z-index: 100;
+  max-height: 200px;
+  /*
+  -moz-box-shadow:    inset  0  8px 8px -8px #696868, 
+                      inset  0 -8px 8px -8px #696868;
+  -webkit-box-shadow: inset  0  8px 8px -8px #696868, 
+                      inset  0 -8px 8px -8px #696868;
+   box-shadow:        inset  0  8px 8px -8px #696868, 
+                      inset  0 -8px 8px -8px #696868;
+  */
+}
+input[type=text]
+{
+  border: 1px solid rgb(200,200,200);
+}
+#datalist .item
+{
+  cursor: pointer;
+}
+#datalist .item.selected
+{
+  background-color: #3297FD;
+  color: white;   
+}
+.datalistitem
+{
+  position: relative;
+}
+.datalistitem > .cornerinfo,
+.datalistitem > .blockinfo
+{
+  display: inline-block;
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+  font-size: 11px;
+  font-family: monospace;
+  color: rgb(50,50,50);
+}
+.datalistitem > .blockinfo
+{
+  color: white;
+  background: red;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 3px;
+  border-radius: 5px;
+}
+.nodata
+{
+  color: grey;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: normal;
+}
+.filltoday
+{
+  
+}
+.filltoday:hover
+{
+}

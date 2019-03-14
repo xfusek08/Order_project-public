@@ -1,0 +1,179 @@
+
+table
+{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.browserconn
+{
+  border-top: none;
+}
+.a4ff_a4list hr
+{
+  border: 1px solid black
+}
+.a4ff_a4list .caption
+{
+  font-weight: bold;
+}
+.a4ff_a4list .header
+{
+  border-bottom: 3px black solid;
+}
+.a4ff_a4list .header > .caption
+{
+  /*border-bottom: 1px black solid;*/
+  text-align: center;
+  font-size: 18px;
+}
+.a4ff_a4list .header > .caption > span
+{
+  letter-spacing: 4px;
+}
+.a4ff_a4list .header > .firma-popis,
+.a4ff_a4list .header > .firma-logo
+{
+  display: table-cell;
+  vertical-align: top;
+}
+.a4ff_a4list .header > .firma-popis
+{
+  width: 61%;
+  padding-top: 10px;
+  padding-bottom: 3px;
+}
+.a4ff_a4list .header > .firma-logo > img
+{
+  height: 100px;
+  width: 275px;
+  padding-top: 5px;
+}
+.a4ff_a4list .header > .firma-popis > div
+{
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+.a4ff_a4list .transporttrio
+{
+  display: table;
+  border-collapse: collapse;
+  font-weight: bold;
+  width: 100%;
+  border: black solid 2px;
+}
+.a4ff_a4list .transporttrio .transport
+{
+  border: black solid 1px;
+  display: table-cell;
+  margin: 0;
+  padding: 2px;
+}
+.a4ff_a4list .blockform
+{
+  margin: 5px;
+  margin-top: 10px;
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+.a4ff_a4list .blockform > *
+{
+  vertical-align: top;
+}
+.a4ff_a4list .blockform > table
+{
+   width: calc(100% - 12px);
+}
+
+.a4ff_a4list .blockform table
+{  
+  white-space: nowrap;
+}
+.a4ff_a4list .blockform .caption
+{
+  font-size: 15px;
+  margin-top: 8px;
+}
+.a4ff_a4list .blockform input[type=text]
+{
+  width: 100%;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.customer
+{
+  /*
+  min-width: 100px;
+  -webkit-box-shadow: 0px 4px 2px -2px rgba(0,0,0,0.75);
+     -moz-box-shadow: 0px 4px 2px -2px rgba(0,0,0,0.75);
+          box-shadow: 0px 4px 2px -2px rgba(0,0,0,0.75);
+  */
+  display: table;
+  width: 100%;
+}
+.customer > div
+{
+  padding: 5px;
+  padding-left: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  display: table-cell;  
+  vertical-align: middle;
+}
+.customer > .colorprev
+{
+  padding-right: 8px;
+  max-width: 25px;
+  min-width: 25px;
+  width: 25px;
+}
+.customer > .colorprev > div
+{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+.datalistitem
+{
+  font-weight: normal;
+  padding: 8px;
+  border-bottom: 2px solid rgb(200,200,200);
+  font-size: 12px;
+}
+.datalistitem > table
+{
+  table-layout: initial;
+  width: 100%;
+  border-collapse: collapse;  
+  white-space: nowrap;
+}
+.datalistitem > table td
+{
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.datalistitem table tr td:last-child
+{
+  width: 100%;
+}
+.transport table td input[type="text"]
+{
+  width: 100%;
+}
+.transport
+{
+  position: relative;
+}
+.transport .delbt
+{
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+.transport .delbt img
+{
+  height: 20px;
+}

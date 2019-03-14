@@ -1,0 +1,28 @@
+ INSERT INTO OR_SPOT (ORSPT_DATE, ORSPT_EXPTXTPRE, ORSPT_EXPTXTPOST, ORSPT_FIRMA, ORSPT_FIRMA2, ORSPT_MESTO, ORSPT_POZN1, ORSPT_POZN2, ORSPT_PSC, ORSPT_STAT, ORSPT_ULICE)
+ VALUES (
+'2.9.2016', 
+'od', 
+'út 12:30', 
+'Zdas a.s.', 
+'', 
+'Žďár nad sázavou', 
+'rychle', 
+'', 
+'591 01', 
+'CZ', 
+'Strojírenská'
+);
+INSERT INTO OR_SPOT (ORSPT_DATE, ORSPT_EXPTXTPRE, ORSPT_EXPTXTPOST, ORSPT_FIRMA, ORSPT_FIRMA2, ORSPT_MESTO, ORSPT_POZN1, ORSPT_POZN2, ORSPT_PSC, ORSPT_STAT, ORSPT_ULICE)
+ VALUES (
+'5.9.2016', 
+'do', 
+'čt 12:30', 
+'TOKOZ a.s.', 
+'', 
+'Žďár nad sázavou', 
+'rychle', 
+'', 
+'591 01', 
+'CZ', 
+'Pilák'
+)

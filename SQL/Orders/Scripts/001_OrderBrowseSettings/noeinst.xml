@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="yes" ?>
+<noeinst type="script">
+  <ident>OrderBrowse</ident>
+  <version>1.00</version>
+  <exec>run.sql</exec>
+</noeinst>
