@@ -549,7 +549,7 @@ function ExportRequest()
             var url = location.href;
             window.open(url.substring(0, url.lastIndexOf("/") + 1) +'download.php?'+
               'filename=' + $(response).find('downloadfile').attr('sourcename')+
-              '&downloadas=' + $(response).find('downloadfile').attr('downloadname'));
+              '&downloads=' + $(response).find('downloadfile').attr('downloadname'));
             
           }
         }
