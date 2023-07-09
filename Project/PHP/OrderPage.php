@@ -3,7 +3,7 @@
 class OrderPage extends Page
 {
     private $i_oOrderForm;
-    private $i_oBrowser;
+    public $i_oBrowser;
     
     public function __construct() {
         $this->i_oBrowser = new Browser(

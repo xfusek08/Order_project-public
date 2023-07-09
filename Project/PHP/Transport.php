@@ -4,8 +4,8 @@ class Transport extends DatabaseEntity
     public $i_oNakladka;
     public $i_oVykladka;
     public $i_sID;
-
-    public function __construct($a_iPK = 0, $a_sID, $ExternTransaction = false)
+    
+    public function __construct($a_iPK, $a_sID, $ExternTransaction = false)
     {
         $this->i_sTableName = 'OR_OBJNAKLVYKL';
         $this->i_sPKColName = 'ORONV_PK';
@@ -20,7 +20,7 @@ class Transport extends DatabaseEntity
             $this->i_oVykladka = new Spot(0, $ExternTransaction);
         }
     }
-
+    
     protected function DefColumns()
     {
         $this->AddColumn(DataType::Integer, 'oronv_obj');
@@ -31,14 +31,14 @@ class Transport extends DatabaseEntity
         $this->AddColumn(DataType::String, 'oronv_poznobj');
         $this->AddColumn(DataType::String, 'oronv_zbozipopis');
     }
-
+    
     public function LoadFromPostData($a_sPrefix = '')
     {
         $this->i_oNakladka->LoadFromPostData($this->i_sID . 'nakl_');
         $this->i_oVykladka->LoadFromPostData($this->i_sID . 'vykl_');
         parent::LoadFromPostData($this->i_sID);
     }
-
+    
     public function GetAsXML($formatted = true)
     {
         $res = '<transport ident="' . $this->i_sID . '">';

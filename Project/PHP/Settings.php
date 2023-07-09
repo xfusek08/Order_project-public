@@ -8,16 +8,16 @@ define("DATE_FORMAT", "d.m.Y");
 date_default_timezone_set('Europe/Prague');
 
 // database
-define("DATABASE_FULLPATH", 'D:\Work\05_Mracek\Order_Project\DB\ORDER.FDB');
-define("DATABASE_USER", "sysdba");
-define("DATABASE_PASSWORD", "masterkey");
+define("DATABASE_DNS", 'mysql:host=db;port=3306;dbname=app');
+define("DATABASE_USER", "admin");
+define("DATABASE_PASSWORD", "password");
 
 //Logs
-define("LOG_FOLDER", 'D:\Work\05_Mracek\Order_Project\Repository\Project\log ');
+define("LOG_FOLDER", 'logs');
 
 // FOP
-define("EXPORT_FOLDER", 'D:\Work\05_Mracek\Order_Project\Repository\Project\export');
-define("FOP_FOLDER", 'c:\fop');
+define("EXPORT_FOLDER", 'export');
+define("FOP_FOLDER", 'fop');
 
 function GetCzechDayName($day) {
     static $names = array('neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota');

@@ -12,3 +12,5 @@ Project/log/
 Project/export/*.*
 
 /.vscode
+
+.env

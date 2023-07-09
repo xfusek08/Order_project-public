@@ -3,8 +3,6 @@ class MyDatabase
 {
     const DUPLICATE_CODE = 1062;
     
-    public static $DBFullPath = DATABASE_FULLPATH;
-    
     public static $UserName = DATABASE_USER;
     public static $Password = DATABASE_PASSWORD;
     
@@ -18,7 +16,7 @@ class MyDatabase
         if (!isset($PDO)) {
             $settings = array(
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                //PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+                // PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
                 // s timhle nefunguji datetime typy pri query
                 PDO::ATTR_EMULATE_PREPARES => false,
                 PDO::ATTR_AUTOCOMMIT => 0
@@ -26,7 +24,7 @@ class MyDatabase
             
             try {
                 self::$PDO = new PDO(
-                    "firebird:dbname=" . self::$DBFullPath . ";charset=UTF8",
+                    DATABASE_DNS . ";charset=UTF8",
                     self::$UserName,
                     self::$Password,
                     $settings

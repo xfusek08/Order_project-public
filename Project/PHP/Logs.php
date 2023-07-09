@@ -16,15 +16,15 @@ class Logging
             mkdir(LOG_FOLDER);
         }
         
+        $File = null;
+        self::$LogFileName = self::GetActFileName();
+        self::$FullLogFileName = LOG_FOLDER . "/" . self::GetActFileName();
+        
         if (file_exists(self::$FullLogFileName) && self::IsNewFile()) {
             $File = fopen(self::$FullLogFileName, "a");
             self::WriteLogLine($File, "File ended.");
             fclose($File);
         }
-        
-        $File = null;
-        self::$LogFileName = self::GetActFileName();
-        self::$FullLogFileName = LOG_FOLDER . "/" . self::GetActFileName();
         
         try {
             if (!file_exists(self::$FullLogFileName)) {

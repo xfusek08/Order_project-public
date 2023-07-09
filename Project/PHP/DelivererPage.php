@@ -3,7 +3,7 @@ class DelivererPage extends Page
 {
     private $i_oDeliverer;
     private $i_bFocusRaal;
-    private $i_oBrowser;
+    public $i_oBrowser;
     
     public function __construct() {
         $this->i_oBrowser = new Browser('or_deliverer_v', 'ordlv_pk');
