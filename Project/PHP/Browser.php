@@ -44,6 +44,7 @@ class Browser
         $SQL = $this->BuildSQLSelect($a_iLoadNum, $a_iSkip, $v_aParams);
         if (!MyDatabase::RunQuery($fields, $SQL, false, $v_aParams)) {
             $v_sHTML .= 'Chyba databázového dotazu';
+            $fields = [];
             // $v_sHTML .= '<br />';
             // $v_sHTML .= '<pre>';
             // $v_sHTML .= $v_aParams[0];
@@ -77,7 +78,6 @@ class Browser
         
         $v_sHTML .= '</tbody>';
         $v_sHTML .= '</table>';
-        
         if (count($fields) == 0) {
             $v_sHTML .= '<div class="nodata">Žádná data</div>';
         }

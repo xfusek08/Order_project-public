@@ -18,7 +18,7 @@ require_once './PHP/OrderPage.php';
 require_once './PHP/CustomerPage.php';
 require_once './PHP/DelivererPage.php';
 
-function InitPage($a_bReload) {
+function InitPage($a_bReload): Page {
     switch ($_SESSION['actpage']) {
         case 'home':
             if (isset($_SESSION['oweviewpage']) && !$a_bReload)
@@ -67,7 +67,7 @@ if (isset($_POST['ajax'])) {
     if ($_POST['type'] == 'browser' && $_POST['brtype'] == 'resetfilters') {
         $v_oTmpPage = InitPage(true);
         $ActPage->i_oBrowser = $v_oTmpPage->i_oBrowser;
-        if ($_SESSION['actpage'] == 'cust')
+        if ($_SESSION['actpage'] == 'cust' && $ActPage instanceof CustomerPage)
             $ActPage->ChangeCustomer($ActPage->i_oCustomer->i_iPK);
         $v_oTmpPage = null;
     }
@@ -79,6 +79,7 @@ if (isset($_POST['ajax'])) {
 } else {
     $ActPage->ProcessGet();
 }
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

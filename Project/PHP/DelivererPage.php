@@ -6,6 +6,7 @@ class DelivererPage extends Page
     public $i_oBrowser;
     
     public function __construct() {
+        parent::__construct();
         $this->i_oBrowser = new Browser('or_deliverer_v', 'ordlv_pk');
         
         $this->i_oBrowser->AddField(DataType::String, 'Raal', 'ordlv_raal')->i_iMaxLength = 3;

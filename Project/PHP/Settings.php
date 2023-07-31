@@ -8,9 +8,9 @@ define("DATE_FORMAT", "d.m.Y");
 date_default_timezone_set('Europe/Prague');
 
 // database
-define("DATABASE_DNS", 'mysql:host=db;port=3306;dbname=app');
-define("DATABASE_USER", "admin");
-define("DATABASE_PASSWORD", "password");
+define("DATABASE_DNS", 'firebird:dbname=firebird:/firebird/data/ORDER.fdb');
+define("DATABASE_USER", "sysdba");
+define("DATABASE_PASSWORD", "masterkey");
 
 //Logs
 define("LOG_FOLDER", 'logs');

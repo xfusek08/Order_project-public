@@ -6,6 +6,8 @@ class OrderPage extends Page
     public $i_oBrowser;
     
     public function __construct() {
+        parent::__construct();
+        
         $this->i_oBrowser = new Browser(
             "
             or_order

@@ -2,9 +2,6 @@
 
 class OverviewPage extends Page
 {
-    public function __construct() {
-    }
-
     public function BuildPage() {
         parent::BuildPage();
         $SQL = "

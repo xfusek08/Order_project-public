@@ -9,6 +9,8 @@ class CustomerPage extends Page
     public $i_oBrowser;
     
     public function __construct() {
+        parent::__construct();
+        
         $this->i_oBrowser = new Browser('or_custaddress', 'orcadr_pk');
         $this->i_oBrowser->i_sOuterWhere = '1 = 2'; // nema smysl cokoliv vypisovat, pokud neni vybran zakaznik
         

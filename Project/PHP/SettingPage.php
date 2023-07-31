@@ -4,6 +4,7 @@ class SettingPage extends Page
     private $i_oSetting;
     
     public function __construct() {
+        parent::__construct();
         $this->i_oSetting = new Setting(1);
         if (!$this->i_oSetting->i_bLoad_Success) {
             $this->AddAlert('red', 'Nastaveni se nepodařilo načíst - chyba databáze.');
