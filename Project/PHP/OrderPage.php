@@ -202,32 +202,33 @@ class OrderPage extends Page
         if (parent::ProcessAjax()) {
             return;
         }
-        
-        $res = '<respxml>';
-        if ($_POST['type'] == 'neworder') {
-            $this->i_oOrderForm = new OrderForm($this);
-            // TODO: podminka uspechu ... ?
-            $res .= '<formxml>' . $this->i_oOrderForm->BuildXML() . '</formxml>';
-        } else if ($_POST['type'] == 'editorder') {
-            $this->i_oOrderForm = new OrderForm($this, intval($_POST['pk']));
-            if (!$this->i_oOrderForm->i_bLoadSuccess) {
-                $this->AddAlert('red', 'Selhalo načítání objednávky.');
-                $res .= 'chyba';
-            } else {
-                $res .= '<formxml>' . $this->i_oOrderForm->BuildXML() . '</formxml>';
-            }
-        } else if ($_POST['type'] == 'closeform') {
-            $this->i_oOrderForm = null;
-            $res .= '<result>success</result>';
-        } else if ($_POST['type'] = 'flformreq') {
-            $res .= $this->i_oOrderForm->ProcessAjax();
-            if ($this->i_oOrderForm->i_bToDelete) {
-                $this->i_oOrderForm = null;
-            }
-        }
-        
-        $res .= '</respxml>';
-        
-        echo $res;
+        ?>
+        <respxml>
+            <?php if ($_POST['type'] == 'neworder'): ?>
+                <?php $this->i_oOrderForm = new OrderForm($this); ?>
+                <formxml><?= $this->i_oOrderForm->BuildXML()?></formxml>
+            <?php elseif ($_POST['type'] == 'editorder'): ?>
+                <?php $this->i_oOrderForm = new OrderForm($this, intval($_POST['pk'])); ?>
+                <?php if (!$this->i_oOrderForm->i_bLoadSuccess): ?>
+                    <?php $this->AddAlert('red', 'Selhalo načítání objednávky.'); ?>
+                    chyba
+                <?php else: ?>
+                    <formxml>
+                        <?= $this->i_oOrderForm->BuildXML() ?>
+                    </formxml>
+                <?php endif; ?>
+            <?php elseif ($_POST['type'] == 'closeform'): ?>
+                <?php $this->i_oOrderForm = null; ?>
+                <result>success</result>
+            <?php elseif ($_POST['type'] = 'flformreq'): ?>
+                <?= $this->i_oOrderForm->ProcessAjax() ?>
+                <?php
+                if ($this->i_oOrderForm->i_bToDelete) {
+                    $this->i_oOrderForm = null;
+                }
+                ?>
+            <?php endif; ?>
+        </respxml>
+        <?php
     }
 }

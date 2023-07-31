@@ -110,7 +110,7 @@ class Transport extends DatabaseEntity
     public function BuildTransportOrderForm($a_bShowDelbt = false)
     {
         ob_start();
-?>
+        ?>
         <div class="transport" ident="<?= $this->i_sID ?>">
             <?php if ($a_bShowDelbt) : ?>
                 <div class="delbt"><img src="images/cross.png" /></div>
@@ -428,8 +428,8 @@ class Transport extends DatabaseEntity
                     </table>
                 </div>
             </form>
-        </div
-<?php
-        return ob_get_contents();
+        </div>
+        <?php
+        return ob_get_clean();
     }
 }

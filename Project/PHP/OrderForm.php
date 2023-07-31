@@ -31,7 +31,7 @@ class OrderForm
         }
     }
     
-    public function BuildXML() {
+    public function BuildXML(): string {
         ob_start();
 ?>
     <actions>
@@ -427,7 +427,7 @@ class OrderForm
     </block>
     
 <?php
-        return ob_get_contents();
+        return ob_get_clean();
     }
     
     public function ProcessAjax() {
@@ -441,16 +441,16 @@ class OrderForm
                 $res = $this->GetCustAddrDatalistXML($_POST['value'], 'nakl');
             } elseif ($_POST['input'] == 'searchvyklspot') {
                 $res = $this->GetCustAddrDatalistXML($_POST['value'], 'vykl');
-            } elseif ($_POST['formtype'] == 'getdeliverer') {
-                $deliverer = new Deliverer(intval($_POST['pk']));
             }
+        } elseif ($_POST['formtype'] == 'getdeliverer') {
+            $deliverer = new Deliverer(intval($_POST['pk']));
             if ($deliverer->i_bLoad_Success) {
                 $res .= $deliverer->GetAsXML();
             } else {
                 $res .= 'chyba';
                 $this->i_oParentPage->AddAlert('red', 'Nepodařilo se načíst údaje o dodavateli.');
             }
-        } else if ($_POST['formtype'] == 'getcustaddress') {
+        } elseif ($_POST['formtype'] == 'getcustaddress') {
             $v_oCustAddress = new CustomerAddress(intval($_POST['pk']));
             if ($v_oCustAddress->i_bLoad_Success) {
                 $res .= $v_oCustAddress->GetAsXML();
@@ -458,7 +458,7 @@ class OrderForm
                 $res .= 'chyba';
                 $this->i_oParentPage->AddAlert('red', 'Nepodařilo se načíst údaje o skladu.');
             }
-        } else if ($_POST['formtype'] == 'submit') {
+        } elseif ($_POST['formtype'] == 'submit') {
             $validData = true;
             $this->i_oOrder->LoadFromPostData();
             $validData = $this->i_oOrder->IsDataValid();
@@ -473,7 +473,7 @@ class OrderForm
                 if ($saveToDBResult == SaveToDBResult::OK) {
                     $this->i_oParentPage->AddAlert('green', 'Objednávka uložena.');
                     $res .= 'ok';
-                } else if ($saveToDBResult == SaveToDBResult::InvalidData) {
+                } elseif ($saveToDBResult == SaveToDBResult::InvalidData) {
                     $validData = false;
                 } else {
                     $res .= 'chyba';
@@ -484,7 +484,7 @@ class OrderForm
                 $this->i_oParentPage->AddAlert('red', 'Formulář obsahuje nevalidní data.');
                 $res .= $this->GetInvalidDataXML();
             }
-        } else if ($_POST['formtype'] == 'export') {
+        } elseif ($_POST['formtype'] == 'export') {
             $xml = '';
             $xml .= '<fullorder>';
             $xml .= $this->i_oOrder->GetAsXML();
@@ -503,13 +503,13 @@ class OrderForm
                     'downloadname="' . $this->i_oOrder->GetColumnByName('oror_cisloobj')->GetValue() . '-' . $this->i_oOrder->GetColumnByName('oror_cisloobjrok')->GetValue() . '.pdf" '.
                     'sourcename="' . $FilePDF . '"/>';
             }
-        } else if ($_POST['formtype'] == 'addtransport') {
+        } elseif ($_POST['formtype'] == 'addtransport') {
             $this->i_iTransportCounter++;
             $this->i_oTransports[] = new Transport(0, 'tr_' . $this->i_iTransportCounter);
             $res .= '<block><html>';
             $res .= $this->i_oTransports[count($this->i_oTransports) - 1]->BuildTransportOrderForm(true) . '<hr/>';
             $res .= '</html></block>';
-        } else if ($_POST['formtype'] == 'deltransport') {
+        } elseif ($_POST['formtype'] == 'deltransport') {
             $v_iIndex = $this->GetTransportIndexByID($_POST['ident']);
             $isInDB = $this->i_oTransports[$v_iIndex]->i_iPK > 0;
             if ($v_iIndex == 0) {
@@ -529,7 +529,7 @@ class OrderForm
                     $res .= 'ok';
                 }
             }
-        } else if ($_POST['formtype'] == 'delorder') {
+        } elseif ($_POST['formtype'] == 'delorder') {
             if ($this->i_oOrder->i_iPK > 0) {
                 if (!$this->DeleteFromDB()) {
                     $this->i_oParentPage->AddAlert('Red', 'Objednávku se nepodařilo vymazat.');
@@ -539,7 +539,7 @@ class OrderForm
                     $res .= 'ok';
                 }
             }
-        } else if ($_POST['formtype'] == 'getcustbyident') {
+        } elseif ($_POST['formtype'] == 'getcustbyident') {
             $SQL = 'select orcust_pk from or_customer where orcust_ident = ?';
             $fields = null;
             if (MyDatabase::RunQuery($fields, $SQL, false, $_POST['customerid'])) {
@@ -826,25 +826,26 @@ class OrderForm
                 ?>
                     <item>
                         <div class="datalistitem" pk="<?= $fields[$i]['ORCADR_PK'] ?>">
-                        <table>
-                            <tr><td style="font-weight: bold" colspan="4"><?= $fields[$i]['ORCADR_FIRMA'] ?></td></tr>`
-                            <tr><td colspan="4"><?= $fields[$i]['ORCADR_FIRMA2'] ?></td></tr>
-                            <tr><td colspan="4"><?= $fields[$i]['ORCADR_ULICE'] ?></td></tr>
-                            <tr>
-                                <td><?= $fields[$i]['ORCADR_STAT'] ?></td>
-                                <td>-</td>
-                                <td><?= $fields[$i]['ORCADR_PSC'] ?> | </td>
-                                <td><?= $fields[$i]['ORCADR_MESTO'] ?></td>
-                            </tr>
-                            <?php if ($a_sSearchFor == 'nakl'): ?>
-                                <div class="cornerinfo">Nakládek: <?= $fields[$i]['ORCADR_NAKLNUM'] ?></div>
-                            <?php elseif ($a_sSearchFor == 'vykl'): ?>
-                                <div class="cornerinfo">Vykládek: <?= $fields[$i]['ORCADR_VYKLNUM'] ?></div>
-                            <?php endif; ?>
-                        </table>
+                            <table>
+                                <tr><td style="font-weight: bold" colspan="4"><?= $fields[$i]['ORCADR_FIRMA'] ?></td></tr>`
+                                <tr><td colspan="4"><?= $fields[$i]['ORCADR_FIRMA2'] ?></td></tr>
+                                <tr><td colspan="4"><?= $fields[$i]['ORCADR_ULICE'] ?></td></tr>
+                                <tr>
+                                    <td><?= $fields[$i]['ORCADR_STAT'] ?></td>
+                                    <td>-</td>
+                                    <td><?= $fields[$i]['ORCADR_PSC'] ?> | </td>
+                                    <td><?= $fields[$i]['ORCADR_MESTO'] ?></td>
+                                </tr>
+                                <?php if ($a_sSearchFor == 'nakl'): ?>
+                                    <div class="cornerinfo">Nakládek: <?= $fields[$i]['ORCADR_NAKLNUM'] ?></div>
+                                <?php elseif ($a_sSearchFor == 'vykl'): ?>
+                                    <div class="cornerinfo">Vykládek: <?= $fields[$i]['ORCADR_VYKLNUM'] ?></div>
+                                <?php endif; ?>
+                            </table>
+                        </div>
                     </item>
                 <?php
-                $v_sRes .= ob_get_contents();
+                $v_sRes .= ob_get_clean();
             }
         }
         
