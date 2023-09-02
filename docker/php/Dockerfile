@@ -1,6 +1,8 @@
-FROM php:8.1-fpm-buster
+FROM php:8.2-fpm-buster
 
-RUN apt-get update && apt-get install -y firebird-dev
+RUN apt-get update
+RUN apt-get install -y firebird-dev
+RUN apt-get install -y fop
 
 # RUN addgroup www-data xfs
 

@@ -1,8 +1,12 @@
 <?php
 class FOPExport
 {
+    private static function createPath(array $path) {
+        return implode(DIRECTORY_SEPARATOR, $path);
+    }
+    
     public static function GetOrderTemplate() {
-        return EXPORT_FOLDER . '\\templates\\OrderTemplate.fo';
+        return self::createPath([EXPORT_FOLDER, 'templates', 'OrderTemplate.fo']);
     }
     
     public static function RunFOP($xml, $a_sTemplate) {
@@ -11,10 +15,11 @@ class FOPExport
         $xml = str_replace('&', "&amp;", $xml);
         $v_sNewFileIdent = GUID();
         
-        $v_sXMLFilePath = EXPORT_FOLDER . '\\' . $v_sNewFileIdent . '.xml';
-        $v_sPDFFilePath = EXPORT_FOLDER . '\\' . $v_sNewFileIdent . '.pdf';
+        $v_sXMLFilePath = self::createPath([EXPORT_FOLDER, "$v_sNewFileIdent.xml"]);
+        $v_sPDFFilePath = self::createPath([EXPORT_FOLDER, "$v_sNewFileIdent.pdf"]);
         
         if (!file_exists($a_sTemplate)) {
+            Logging::WriteLog(LogType::Announcement, 'searching for template in: ' . getcwd());
             Logging::WriteLog(LogType::Error, 'Template file not found: ' . $a_sTemplate);
             return '';
         }
@@ -29,11 +34,12 @@ class FOPExport
         }
         
         $v_sExecString =
-            FOP_FOLDER . '\\fop' .
-            ' -c ' . FOP_FOLDER . '\\conf\\myfop.xconf' .
+            'fop' .
+            ' -c ' . 'fop.xconf' .
             ' -xml ' . $v_sXMLFilePath .
             ' -xsl ' . $a_sTemplate .
             ' -pdf ' . $v_sPDFFilePath;
+        
         try {
             Logging::WriteLog(LogType::Announcement, 'executing: ' . $v_sExecString);
             exec($v_sExecString);

@@ -1,0 +1,31 @@
+<fop version="1.0">
+    <renderers>
+        <renderer mime="application/pdf">
+            <fonts>
+                <!-- <directory>/app/export/fonts</directory> -->
+                <auto-detect/>
+                <font embed-url="/app/export/fonts/FreeSerif.ttf">
+                    <font-triplet name="Arial" style="normal" weight="normal"/>
+                </font>
+                <font embed-url="/app/export/fonts/FreeSerifBold.ttf">
+                    <font-triplet name="Arial" style="normal" weight="bold"/>
+                </font>
+                <font embed-url="/app/export/fonts/FreeSans.ttf">
+                    <font-triplet name="SansSerif" style="normal" weight="normal"/>
+                </font>
+                <font embed-url="/app/export/fonts/FreeSansBold.ttf">
+                    <font-triplet name="SansSerif" style="normal" weight="bold"/>
+                </font>
+                <!-- <font embed-url="/app/export/fonts/NotoSerifVithkuqi-Bold.ttf">
+                    <font-triplet name="Noto Serif Vithkuqi" style="bold" weight="bold"/>
+                </font> -->
+                <!-- <substitutions>
+                    <substitution>
+                        <from font-family="Arial" font-weight="700..900"/>
+                        <to font-family="FreeSerif"/>
+                    </substitution>
+                </substitutions> -->
+            </fonts>
+        </renderer>
+    </renderers>
+</fop>
