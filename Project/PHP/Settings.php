@@ -50,8 +50,9 @@ function BoolTo01($var) {
 }
 
 function IsTimestamp($var) {
-    if (!(is_int($var) || is_float($var)))
+    if (!(is_int($var) || is_float($var))) {
         return false;
+    }
     return true;
 }
 
@@ -76,8 +77,9 @@ function IncObjCount($ExternTransaction = false) {
                 orset_cisloobj = (select max(orset_cisloobj) + 1 from or_setup) returning orset_cisloobj
         ",
         $ExternTransaction
-    ))
+    )) {
         return -1;
+    }
     return intval($fields[0][0]);
 }
 

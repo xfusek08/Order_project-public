@@ -681,8 +681,9 @@ class CustomerPage extends Page
                 if ($this->ChangeCustomer($this->i_oCustomer->i_iPK)) {
                     $this->AddAlert('green', 'Uloženo.');
                 }
-            } else
+            } else {
                 $this->AddAlert('red', 'Během ukládání zákazníka nastala chyba.');
+            }
         }
     }
     
@@ -697,13 +698,13 @@ class CustomerPage extends Page
         } elseif (isset($_POST['c_submit'])) {
             $this->i_oCustomerAddress->LoadFromPostData();
             if ($this->i_oCustomerAddress->SaveToDB(false)) {
-                if ($this->ChangeCustAddress($this->i_oCustomerAddress->i_iPK))
+                if ($this->ChangeCustAddress($this->i_oCustomerAddress->i_iPK)) {
                     $this->AddAlert('green', 'Uloženo.');
+                }
             } else {
                 $this->AddAlert('red', 'Během ukládání zákazníka nastala chyba.');
             }
         }
-        // TODO: co tady ? -- dojde se k tomu
         $this->i_bFocusAddress = false;
         $this->i_bFocusCustomer = false;
     }

@@ -409,9 +409,10 @@ class DelivererPage extends Page
                 // $this->i_oBrowser->i_iSelectedPK = 0;
                 return false;
             }
-        } else
+        } else {
             $this->i_oDeliverer = new Deliverer();
-
+        }
+        
         $this->i_oBrowser->i_iSelectedPK = $this->i_oDeliverer->i_iPK;
         return true;
     }

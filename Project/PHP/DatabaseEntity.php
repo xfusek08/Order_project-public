@@ -32,8 +32,9 @@ abstract class DatabaseEntity
         $SQL = 'select ';
         for ($i = 0; $i < $this->i_iColCount; $i++) {
             $SQL .= $this->i_aColumns[$i]->GetSelectSQL();
-            if ($i + 1 < $this->i_iColCount)
+            if ($i + 1 < $this->i_iColCount) {
                 $SQL .= ', ';
+            }
         }
         
         $SQL .= ' from ' . $this->i_sTableName . ' where ' . $this->i_sPKColName . ' = ?';
@@ -68,8 +69,9 @@ abstract class DatabaseEntity
         $v_aCols = array();
         
         for ($i = 0; $i < $this->i_iColCount; $i++) {
-            if (!is_a($this->i_aColumns[$i], 'SQLColumn')) // pokud se nejedna o vypocteny spoupec
+            if (!is_a($this->i_aColumns[$i], 'SQLColumn')) { // pokud se nejedna o vypocteny spoupec
                 $v_aCols[] = $this->i_aColumns[$i];
+            }
         }
         
         $params = array();
@@ -156,8 +158,9 @@ abstract class DatabaseEntity
             if (isset($_POST[$a_sPrefix . strtolower($this->i_aColumns[$i]->i_sName)])) {
                 $this->i_aColumns[$i]->SetValueFromString($_POST[$a_sPrefix . strtolower($this->i_aColumns[$i]->i_sName)]);
                 $counter++;
-            } elseif ($this->i_aColumns[$i]->i_tDataType == DataType::Bool)
+            } elseif ($this->i_aColumns[$i]->i_tDataType == DataType::Bool) {
                 $this->i_aColumns[$i]->SetValue(false);
+            }
         }
         return $counter;
     }
@@ -366,11 +369,13 @@ class DBEntColumn
             case DataType::DateTrnc:  return date('d.m.', $this->GetValue());
             case DataType::Timestamp: return date(DATE_TIME_FORMAT, $this->GetValue());
             case DataType::Bool:      return BoolTo01Str($this->GetValue());
+            
             case DataType::Integer: return (
                 (!$a_bFormatted || $this->i_bUnformatted)
                     ? strval($this->GetValue())
                     : number_format($this->GetValue(), 0, '', ' ')
-                );
+            );
+            
             case DataType::Float: return (
                 (!$a_bFormatted || $this->i_bUnformatted)
                     ? number_format($this->GetValue(), 2, '.', '')

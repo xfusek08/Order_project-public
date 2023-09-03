@@ -1009,8 +1009,9 @@ class OrderForm
             }
             
             if ($success) {
-                if (!$ExternTransaction)
+                if (!$ExternTransaction) {
                     MyDatabase::$PDO->commit();
+                }
                 return true;
             }
             
@@ -1031,12 +1032,14 @@ class OrderForm
     
     public function DeleteTransport($a_iIndex, $ExternTransaction = false) {
         try {
-            if (!$ExternTransaction)
+            if (!$ExternTransaction) {
                 MyDatabase::$PDO->beginTransaction();
+            }
             
             if ($this->i_oTransports[$a_iIndex]->DeleteFromDB(true)) {
-                if (!$ExternTransaction)
+                if (!$ExternTransaction) {
                     MyDatabase::$PDO->commit();
+                }
                 return true;
             }
             
@@ -1096,8 +1099,9 @@ class OrderForm
     
     private function GetTransportIndexByID($a_sID) {
         for ($i = 0; $i < count($this->i_oTransports); $i++) {
-            if ($this->i_oTransports[$i]->i_sID === $a_sID)
+            if ($this->i_oTransports[$i]->i_sID === $a_sID) {
                 return $i;
+            }
         }
         return 0;
     }

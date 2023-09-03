@@ -106,7 +106,7 @@ class Transport extends DatabaseEntity
         }
         return $success;
     }
-
+    
     public function BuildTransportOrderForm($a_bShowDelbt = false)
     {
         ob_start();

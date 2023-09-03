@@ -222,14 +222,18 @@ class Browser
         for ($i = 0; $i < count($v_aAllFields); $i++) {
             $v_oActField = $v_aAllFields[$i];
             $v_sSQL .= ' ';
+            
             if ($v_oActField->i_sColName == '') {
                 $v_sSQL .= '\' \'';
             } else {
                 $v_sSQL .= $v_oActField->i_sColName . ' as ' . $v_oActField->i_sColIndent;
             }
-            if (($i + 1) < count($v_aAllFields))
+            
+            if (($i + 1) < count($v_aAllFields)) {
                 $v_sSQL .= ',';
+            }
         }
+        
         $v_sSQL .= ' from ' . $this->i_sDBtableName . ') where ';
         
         $v_iPreLength = count_chars($v_sSQL);
@@ -357,12 +361,12 @@ class Browser
                 case DataType::Float:
                     $v_bRes .=
                         '<field' .
-                        ' name="' . $v_aSummarizedFields[$i]->i_sName . '"' .
-                        ' ident="' . $v_aSummarizedFields[$i]->i_sColIndent . '"' .
-                        ' fistrowdesc="Celkem"' .
-                        ' secrowdesc="Průměr"' .
-                        ' fistrow="' . number_format(floatval($fields[0][strtoupper($v_aSummarizedFields[$i]->i_sColIndent) . '_SUM']), 2, '.', ' ') . '"' .
-                        ' secrow="' . number_format(floatval($fields[0][strtoupper($v_aSummarizedFields[$i]->i_sColIndent) . '_AVG']), 2, '.', ' ') . '"' .
+                        '    name="' . $v_aSummarizedFields[$i]->i_sName . '"' .
+                        '    ident="' . $v_aSummarizedFields[$i]->i_sColIndent . '"' .
+                        '    fistrowdesc="Celkem"' .
+                        '    secrowdesc="Průměr"' .
+                        '    fistrow="' . number_format(floatval($fields[0][strtoupper($v_aSummarizedFields[$i]->i_sColIndent) . '_SUM']), 2, '.', ' ') . '"' .
+                        '    secrow="' . number_format(floatval($fields[0][strtoupper($v_aSummarizedFields[$i]->i_sColIndent) . '_AVG']), 2, '.', ' ') . '"' .
                         '/>';
                     break;
                 case DataType::Date:
@@ -372,8 +376,9 @@ class Browser
                     
                     if ($v_aSummarizedFields[$i]->i_dFilterDateFrom == null) {
                         $v_sDateFrom = $fields[0][strtoupper($v_aSummarizedFields[$i]->i_sColIndent) . '_MIN'];
-                        if ($v_sDateFrom != '')
+                        if ($v_sDateFrom != '') {
                             $v_sDateFrom =  date('d.m.Y', strtotime($v_sDateFrom));
+                        }
                     } else {
                         $v_sDateFrom =  date('d.m.Y', $v_aSummarizedFields[$i]->i_dFilterDateFrom);
                     }

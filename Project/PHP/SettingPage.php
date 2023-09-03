@@ -46,17 +46,14 @@ class SettingPage extends Page
                 <table>
                     <tr>
                         <td>Cesta k xml souboru s objednavkami:</td>
-                        <td>
-                            <input type="text" name="orderxmlfile" value="" />
-                        </td>
+                        <td><input type="text" name="orderxmlfile" value="" /></td>
                     </tr>
                 </table>
                 <input type="submit" name="c_submit" value="uložit" />
             </form>
-            <?php
-            if (isset($_SESSION['importsummary']))
-                echo '<textarea readonly style="width: 100ch; height: 50ch">' . $_SESSION['importsummary'] . "</textarea>";
-            ?>
+            <?php if (isset($_SESSION['importsummary'])): ?>
+                <textarea readonly style="width: 100ch; height: 50ch"><?= $_SESSION['importsummary'] ?></textarea>
+            <?php endif; ?>
         </div>
 <?php
     }
@@ -238,9 +235,6 @@ class SettingPage extends Page
         } else {
             $a_sResDesc = 'invalid data';
             $v_bSuccess = false;
-        }
-        if (!$v_bSuccess) {
-            //$a_sResDesc .= PHP_EOL . $v_oOrderForm->GetInvalidDataXML();
         }
         return $v_bSuccess;
     }

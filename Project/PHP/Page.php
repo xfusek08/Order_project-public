@@ -4,7 +4,7 @@ class Page
     public $i_oBrowser;
     public $i_sFiles;
     public $i_aAlerts;
-
+    
     public function __construct() {
         $this->i_oBrowser = null;
         $this->i_sFiles = '';
@@ -28,8 +28,9 @@ class Page
     
     public function ProcessAjax() {
         if ($_POST['type'] == 'browser' && $this->i_oBrowser !== null) {
-            if (!$this->i_oBrowser->ProcessAjax())
+            if (!$this->i_oBrowser->ProcessAjax()) {
                 $this->AddAlert('red', 'Chyba při načítání parametrů pro browser.');
+            }
             return true;
         }
         return false;

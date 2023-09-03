@@ -57,9 +57,8 @@ class DataField
                 $ResArray = array_merge($ResArray, $this->i_aFields[$i]->GetLowLevelFields());
             }
             return $ResArray;
-        } else {
-            return array($this);
         }
+        return array($this);
     }
     
     public function GetHeaderCell() {
@@ -144,7 +143,6 @@ class DataField
         $v_sRes .= '</div>';
         
         $v_sRes .= '</div>';
-        // filters
         
         $v_sRes .= '</th>';
         return $v_sRes;

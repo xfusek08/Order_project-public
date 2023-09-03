@@ -21,31 +21,30 @@ require_once './PHP/DelivererPage.php';
 function InitPage($a_bReload): Page {
     switch ($_SESSION['actpage']) {
         case 'home':
-            if (isset($_SESSION['oweviewpage']) && !$a_bReload)
+            if (isset($_SESSION['oweviewpage']) && !$a_bReload) {
                 return unserialize($_SESSION['oweviewpage']);
-            else
-                return new OverviewPage();
+            }
+            return new OverviewPage();
         case 'ord':
-            if (isset($_SESSION['orderpage']) && !$a_bReload)
+            if (isset($_SESSION['orderpage']) && !$a_bReload) {
                 return unserialize($_SESSION['orderpage']);
-            else
-                return new OrderPage();
+            }
+            return new OrderPage();
         case 'cust':
-            if (isset($_SESSION['customerpage']) && !$a_bReload)
+            if (isset($_SESSION['customerpage']) && !$a_bReload) {
                 return unserialize($_SESSION['customerpage']);
-            else
-                return new CustomerPage();
+            }
+            return new CustomerPage();
         case 'dopr':
-            if (isset($_SESSION['delivererpage']) && !$a_bReload)
+            if (isset($_SESSION['delivererpage']) && !$a_bReload) {
                 return unserialize($_SESSION['delivererpage']);
-            else
-                return new DelivererPage();
+            }
+            return new DelivererPage();
         case 'set':
             return new SettingPage();
         default:
             $_SESSION['actpage'] = 'ord';
             return new OrderPage();
-            break;
     }
 }
 
@@ -67,14 +66,17 @@ if (isset($_POST['ajax'])) {
     if ($_POST['type'] == 'browser' && $_POST['brtype'] == 'resetfilters') {
         $v_oTmpPage = InitPage(true);
         $ActPage->i_oBrowser = $v_oTmpPage->i_oBrowser;
-        if ($_SESSION['actpage'] == 'cust' && $ActPage instanceof CustomerPage)
+        if ($_SESSION['actpage'] == 'cust' && $ActPage instanceof CustomerPage) {
             $ActPage->ChangeCustomer($ActPage->i_oCustomer->i_iPK);
+        }
         $v_oTmpPage = null;
     }
     $ActPage->ProcessAjaxGlobal();
     SerializeActPage($ActPage);
     exit;
-} elseif (isset($_POST['pagepost'])) {
+}
+
+if (isset($_POST['pagepost'])) {
     $ActPage->ProcessPost();
 } else {
     $ActPage->ProcessGet();
@@ -98,8 +100,9 @@ if (isset($_POST['ajax'])) {
     <script type="text/javascript" src="jscripts/Browser.js"></script>
     <script type="text/javascript" src="jscripts/MainScripts.js"></script>
     <?php
-    if ($ActPage->i_sFiles != '')
+    if ($ActPage->i_sFiles != '') {
         echo $ActPage->i_sFiles;
+    }
     ?>
 </head>
 
@@ -113,30 +116,28 @@ if (isset($_POST['ajax'])) {
                     </div>
                     <div>
                         <ul>
-                            <!--<a href="?page=home"><li <?php //if ($_SESSION['actpage'] == 'home'){ echo('class="selected"'); }
-                                                            ?>>Přehled</li></a> -->
                             <a href="?page=ord">
-                                <li <?php if ($_SESSION['actpage'] == 'ord') {
-                                        echo ('class="selected"');
-                                    } ?>>Objednávky</li>
+                                <li <?= ($_SESSION['actpage'] == 'ord') ? 'class="selected"' : '' ?>>
+                                    Objednávky
+                                </li>
                             </a>
                             <a href="?page=cust">
-                                <li <?php if ($_SESSION['actpage'] == 'cust') {
-                                        echo ('class="selected"');
-                                    } ?>>Zákazníci</li>
+                                <li <?= ($_SESSION['actpage'] == 'cust') ? 'class="selected"' : '' ?>>
+                                    Zákazníci
+                                </li>
                             </a>
                             <a href="?page=dopr">
-                                <li <?php if ($_SESSION['actpage'] == 'dopr') {
-                                        echo ('class="selected"');
-                                    } ?>>Dopravci</li>
+                                <li <?= ($_SESSION['actpage'] == 'dopr') ? 'class="selected"' : '' ?>>
+                                    Dopravci
+                                </li>
                             </a>
                         </ul>
                         <hr />
                         <ul>
                             <a href="?page=set">
-                                <li <?php if ($_SESSION['actpage'] == 'set') {
-                                        echo ('class="selected"');
-                                    } ?>>Nastavení</li>
+                                <li <?= ($_SESSION['actpage'] == 'set') ? 'class="selected"' : '' ?>>
+                                    Nastavení
+                                </li>
                             </a>
                         </ul>
                     </div>
@@ -174,9 +175,7 @@ if (isset($_POST['ajax'])) {
         </div>
         <div class="right">
             <div>
-                <?php
-                $ActPage->BuildPage();
-                ?>
+                <?php $ActPage->BuildPage(); ?>
             </div>
         </div>
     </div>
@@ -217,9 +216,9 @@ function GetYearSummary() {
     for ($i = 0; $i < count($fields); $i++) {
         $resp .=
             '<year' .
-            ' yearnum="' . $fields[$i]['OROR_CISLOOBJROK'] . '"' .
-            ' profit="' . number_format(floatval($fields[$i]['ZISK']), 2, ',', ' ') . '"' .
-            ' count="' . number_format(intval($fields[$i]['CNT']), 0, '', ' ') . '"' .
+            '    yearnum="' . $fields[$i]['OROR_CISLOOBJROK'] . '"' .
+            '    profit="' . number_format(floatval($fields[$i]['ZISK']), 2, ',', ' ') . '"' .
+            '    count="' . number_format(intval($fields[$i]['CNT']), 0, '', ' ') . '"' .
             '>';
         $SQL =
             'select' .
@@ -241,9 +240,9 @@ function GetYearSummary() {
         for ($j = 0; $j < count($mothQuery); $j++) {
             $resp .=
                 '<month' .
-                ' monthnum="' . $mothQuery[$j]['MONTHNUM'] . '"' .
-                ' profit="' . number_format(floatval($mothQuery[$j]['ZISK']), 2, ',', ' ') . '"' .
-                ' count="' . number_format(intval($mothQuery[$j]['CNT']), 0, '', ' ') . '"' .
+                '    monthnum="' . $mothQuery[$j]['MONTHNUM'] . '"' .
+                '    profit="' . number_format(floatval($mothQuery[$j]['ZISK']), 2, ',', ' ') . '"' .
+                '    count="' . number_format(intval($mothQuery[$j]['CNT']), 0, '', ' ') . '"' .
                 '/>';
         }
         $resp .= '</year>';
