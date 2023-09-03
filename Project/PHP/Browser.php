@@ -123,7 +123,7 @@ class Browser
                 
                 if ($_POST['datatype'] == 'text') {
                     $v_oActDataField->i_sFilterText = $_POST['text'];
-                }  elseif ($_POST['datatype'] == 'number') {
+                } elseif ($_POST['datatype'] == 'number') {
                     
                     if (floatval($_POST['val']) || $_POST['val'] == '0') {
                         $v_oActDataField->i_iFilterNumber = floatval($_POST['val']);
