@@ -77,7 +77,7 @@ class SettingPage extends Page
             $v_sXmlFilePath = "";
             if (!isset($_POST['orderxmlfile'])) {
                 $this->AddAlert('red', 'Cesta k souboru musí být zadána.');
-            } else if ($_POST['orderxmlfile'] == "") {
+            } elseif ($_POST['orderxmlfile'] == "") {
                 $this->AddAlert('red', 'Cesta k souboru musí být zadána.');
             } else {
                 $v_sXmlFilePath = $_POST['orderxmlfile'];
@@ -228,7 +228,7 @@ class SettingPage extends Page
             if ($saveToDBResult == SaveToDBResult::OK) {
                 $a_sResDesc = 'ok';
                 $v_bSuccess = true;
-            } else if ($saveToDBResult == SaveToDBResult::InvalidData) {
+            } elseif ($saveToDBResult == SaveToDBResult::InvalidData) {
                 $a_sResDesc = 'invalid data 2 ';
                 $v_bSuccess = false;
             } else {

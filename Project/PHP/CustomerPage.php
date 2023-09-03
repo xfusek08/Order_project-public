@@ -516,7 +516,7 @@ class CustomerPage extends Page
     public function ProcessPost() {
         if (isset($_POST['custpost'])) {
             $this->ProcessCustFormSubmit();
-        } else if (isset($_POST['storagepost'])) {
+        } elseif (isset($_POST['storagepost'])) {
             $this->ProcessCustAddressFormSubmit();
         }
     }
@@ -525,10 +525,10 @@ class CustomerPage extends Page
         if (isset($_GET['ClearC'])) {
             $this->ChangeCustomer();
             $this->i_bFocusCustomer = true;
-        } else if (isset($_GET['ClearA'])) {
+        } elseif (isset($_GET['ClearA'])) {
             $this->ChangeCustAddress();
             $this->i_bFocusAddress = true;
-        } else if (isset($_GET['cust'])) {
+        } elseif (isset($_GET['cust'])) {
             $this->ChangeCustomer(intval($_GET['cust']));
             $this->i_bFocusCustomer = false;
         }
@@ -549,7 +549,7 @@ class CustomerPage extends Page
             if (isset($_POST['brscroll'])) {
                 $this->i_oBrowser->i_iScrollTop = intval($_POST['brscroll']);
             }
-        } else if ($_POST['type'] == 'brscroll') {
+        } elseif ($_POST['type'] == 'brscroll') {
             $this->i_oBrowser->i_iScrollTop = intval($_POST['scroll']);
         }
         $res .= '</respxml>';
@@ -562,7 +562,7 @@ class CustomerPage extends Page
         $fields = null;
         if (!MyDatabase::RunQuery($fields, $SQL, false)) {
             $v_sRes = '<div>Chyba</div>';
-        } else if (count($fields) > 0) {
+        } elseif (count($fields) > 0) {
             for ($i = 0; $i < count($fields); $i++) {
                 $v_iPK = intval($fields[$i]['ORCUST_PK']);
                 $v_sRes .= '<div class="customer';
@@ -675,7 +675,7 @@ class CustomerPage extends Page
             } else {
                 $this->AddAlert('red', 'Během mazání zákazníka nastala chyba.');
             }
-        } else if (isset($_POST['c_submit'])) {
+        } elseif (isset($_POST['c_submit'])) {
             $this->i_oCustomer->LoadFromPostData();
             if ($this->i_oCustomer->SaveToDB(false)) {
                 if ($this->ChangeCustomer($this->i_oCustomer->i_iPK)) {
@@ -694,7 +694,7 @@ class CustomerPage extends Page
             } else {
                 $this->AddAlert('red', 'Během mazání zákazníka nastala chyba.');
             }
-        } else if (isset($_POST['c_submit'])) {
+        } elseif (isset($_POST['c_submit'])) {
             $this->i_oCustomerAddress->LoadFromPostData();
             if ($this->i_oCustomerAddress->SaveToDB(false)) {
                 if ($this->ChangeCustAddress($this->i_oCustomerAddress->i_iPK))

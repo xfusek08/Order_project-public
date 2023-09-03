@@ -156,7 +156,7 @@ abstract class DatabaseEntity
             if (isset($_POST[$a_sPrefix . strtolower($this->i_aColumns[$i]->i_sName)])) {
                 $this->i_aColumns[$i]->SetValueFromString($_POST[$a_sPrefix . strtolower($this->i_aColumns[$i]->i_sName)]);
                 $counter++;
-            } else if ($this->i_aColumns[$i]->i_tDataType == DataType::Bool)
+            } elseif ($this->i_aColumns[$i]->i_tDataType == DataType::Bool)
                 $this->i_aColumns[$i]->SetValue(false);
         }
         return $counter;

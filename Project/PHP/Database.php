@@ -51,7 +51,7 @@ class MyDatabase
             
             if (!$params) {
                 $query->execute();
-            } else if (!is_array($params)) {
+            } elseif (!is_array($params)) {
                 $query->execute(array($params));
             } else {
                 $query->execute($params);

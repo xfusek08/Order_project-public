@@ -321,7 +321,7 @@ class DelivererPage extends Page
                 }
                 $this->AddAlert('green', 'Vymazáno.');
             }
-        } else if (isset($_POST['c_submit'])) {
+        } elseif (isset($_POST['c_submit'])) {
             $this->i_oDeliverer->i_iPK = 0;
             $this->i_oDeliverer->LoadFromPostData();
             if (!$this->i_oDeliverer->IsDataValid()) {
@@ -359,7 +359,7 @@ class DelivererPage extends Page
             $this->NewDeliverer();
             $this->i_oBrowser->i_iScrollTop = 0;
             $this->i_bFocusRaal = true;
-        } else if (isset($_GET['dopr'])) {
+        } elseif (isset($_GET['dopr'])) {
             $this->NewDeliverer(intval($_GET['dopr']));
             $this->i_bFocusRaal = false;
         }
@@ -386,13 +386,13 @@ class DelivererPage extends Page
             } else {
                 $this->AddAlert('red', 'Chyba při ověřování raal.');
             }
-        } else if ($_POST['type'] == 'dorpsel') {
+        } elseif ($_POST['type'] == 'dorpsel') {
             $this->NewDeliverer(intval($_POST['dopr']));
             $res .= $this->i_oDeliverer->GetAsXML();
             if (isset($_POST['brscroll'])) {
                 $this->i_oBrowser->i_iScrollTop = intval($_POST['brscroll']);
             }
-        } else if ($_POST['type'] == 'brscroll') {
+        } elseif ($_POST['type'] == 'brscroll') {
             $this->i_oBrowser->i_iScrollTop = intval($_POST['scroll']);
         }
         $res .= '</respxml>';

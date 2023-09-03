@@ -77,14 +77,14 @@ class DataField
                 $v_sRes .= ' style="max-width:' . $this->i_iColWidth . 'px; min-width:' . $this->i_iColWidth . 'px;" ';
             }
             $v_sRes .= '/>';
-        } else if ($this->i_DataType == DataType::Date || $this->i_DataType == DataType::DateTrnc) {
+        } elseif ($this->i_DataType == DataType::Date || $this->i_DataType == DataType::DateTrnc) {
             $v_sRes .=
                 '<div class="datefilter"' .
                 ' title="vybrat období"' .
                 ' datefrom="' . (($this->i_dFilterDateFrom == null) ? '' : date('d.m.Y', $this->i_dFilterDateFrom)) . '"' .
                 ' dateto="' . (($this->i_dFilterDateFrom == null) ? '' : date('d.m.Y', $this->i_dFilterDateTo)) . '"' .
                 '><img src="images/calendar.png"/></div>';
-        } else if ($this->i_DataType == DataType::Integer || $this->i_DataType == DataType::Float) {
+        } elseif ($this->i_DataType == DataType::Integer || $this->i_DataType == DataType::Float) {
             if ($this->i_iColWidth < 65 && $this->i_iColWidth > 0) {
                 $v_sRes .= '<div>';
             }
@@ -180,7 +180,7 @@ class DataField
             for ($i = 0; $i < count($this->i_aFields); $i++) {
                 $v_sRes .= $this->i_aFields[$i]->GetDataValCell();
             }
-        } else if ($this->i_DataType == DataType::Bool) {
+        } elseif ($this->i_DataType == DataType::Bool) {
             switch ($this->GetValue()) {
                 case 0:
                     $v_sRes .= '<img src="images/checkbox-unchecked.png"/>';
@@ -220,7 +220,7 @@ class DataField
         if ($this->i_DataType == DataType::String && $this->i_sFilterText != '') {
             $v_sRes .= 'upper(' . $this->i_sColIndent . ') like \'%\' || upper(?) || \'%\'';
             $a_aParams[] = $this->i_sFilterText;
-        } else if (($this->i_DataType == DataType::Integer || $this->i_DataType == DataType::Float) && $this->i_iFilterNumber !== null) {
+        } elseif (($this->i_DataType == DataType::Integer || $this->i_DataType == DataType::Float) && $this->i_iFilterNumber !== null) {
             $opr = '';
             switch ($this->i_FilterNumOper) {
                 case Operator::Equal:
@@ -243,7 +243,7 @@ class DataField
                 $v_sRes .= $this->i_sColIndent . ' ' . $opr . ' ?';
                 $a_aParams[] = $this->i_iFilterNumber;
             }
-        } else if ($this->i_DataType == DataType::Date || $this->i_DataType == DataType::DateTrnc) {
+        } elseif ($this->i_DataType == DataType::Date || $this->i_DataType == DataType::DateTrnc) {
             if ($this->i_dFilterDateFrom !== null) {
                 $v_sRes .= $this->i_sColIndent . ' >= ?';
                 $a_aParams[] = date('d.m.Y', $this->i_dFilterDateFrom);

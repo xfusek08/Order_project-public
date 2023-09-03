@@ -123,7 +123,7 @@ class Browser
                 
                 if ($_POST['datatype'] == 'text') {
                     $v_oActDataField->i_sFilterText = $_POST['text'];
-                }  else if ($_POST['datatype'] == 'number') {
+                }  elseif ($_POST['datatype'] == 'number') {
                     
                     if (floatval($_POST['val']) || $_POST['val'] == '0') {
                         $v_oActDataField->i_iFilterNumber = floatval($_POST['val']);
@@ -135,13 +135,13 @@ class Browser
                         $v_oActDataField->i_FilterNumOper = intval($_POST['operindex']); // const je dosazovan z Order typu
                     }
                     
-                } else if ($_POST['datatype'] == 'order') {
+                } elseif ($_POST['datatype'] == 'order') {
                     foreach ($this->i_aFields as $v_oField) {
                         $v_oField->i_iOrderByIndex = 0;
                     }
                     $v_oActDataField->i_iOrderByIndex = 1;
                     $v_oActDataField->i_bOrdDesc = $_POST['order'] == 'desc';
-                } else if ($_POST['datatype'] == 'orderadd') {
+                } elseif ($_POST['datatype'] == 'orderadd') {
                     if ($_POST['order'] == 'desc') {
                         if ($v_oActDataField->i_bOrdDesc && $v_oActDataField->i_iOrderByIndex > 0) {
                             $this->RemoveOrderIndex($v_oActDataField);
@@ -161,7 +161,7 @@ class Browser
                             }
                         }
                     }
-                } else if ($_POST['datatype'] == 'date') {
+                } elseif ($_POST['datatype'] == 'date') {
                     if (isset($_POST['datefrom']) && $_POST['datefrom'] !== '') {
                         $v_oActDataField->i_dFilterDateFrom = strtotime($_POST['datefrom']);
                     } else {
@@ -181,7 +181,7 @@ class Browser
                 echo $v_sRes;
                 return false;
             }
-        } else if ($_POST['brtype'] == 'getnexdata') {
+        } elseif ($_POST['brtype'] == 'getnexdata') {
             $v_iSkip = intval($_POST['skip']);
             $v_iLoad = intval($_POST['load']);
         }
@@ -256,7 +256,7 @@ class Browser
             } else {
                 $v_sSQL = substr($v_sSQL, 0, -7); // odebereme where
             }
-        } else if ($this->i_sOuterWhere != '') {
+        } elseif ($this->i_sOuterWhere != '') {
             $v_sSQL .= ' and ' . $this->i_sOuterWhere;
         }
         

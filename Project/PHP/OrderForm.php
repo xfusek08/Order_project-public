@@ -602,7 +602,7 @@ class OrderForm
                 $success = $saveToDBResult == SaveToDBResult::OK;
                 if ($saveToDBResult == SaveToDBResult::InvalidData) {
                     $v_bInvalidData = true;
-                } else if ($saveToDBResult == SaveToDBResult::Error) {
+                } elseif ($saveToDBResult == SaveToDBResult::Error) {
                     Logging::WriteLog(LogType::Error, 'SaveFullOrderToDB() - Error during customer update');
                 }
             }
@@ -807,7 +807,7 @@ class OrderForm
         
         if ($a_sSearchFor == 'nakl'){
             $SQL .= ' order by orcadr_naklnum desc';
-        } else if ($a_sSearchFor == 'vykl') {
+        } elseif ($a_sSearchFor == 'vykl') {
             $SQL .= ' order by orcadr_vyklnum desc';
         }
         
@@ -916,7 +916,7 @@ class OrderForm
                 
                 if ($n === 0) {
                     $v_oSpot = $this->i_oTransports[$i]->i_oNakladka;
-                } else if ($n === 1) {
+                } elseif ($n === 1) {
                     $v_oSpot = $this->i_oTransports[$i]->i_oVykladka;
                 }
                 
@@ -974,7 +974,7 @@ class OrderForm
                     $v_oCustAddr->GetColumnByName('orcadr_naklnum')->SetValue(
                         $v_oCustAddr->GetColumnByName('orcadr_naklnum')->GetValue() + 1
                     );
-                } else if (($n === 1) && $NewOrder) { //vykl
+                } elseif (($n === 1) && $NewOrder) { //vykl
                     $v_oCustAddr->GetColumnByName('orcadr_vyklnum')->SetValue(
                         $v_oCustAddr->GetColumnByName('orcadr_vyklnum')->GetValue() + 1
                     );

@@ -35,7 +35,7 @@ function BoolTo01Str($var) {
 function Str01ToBoolInt($var) {
     if ($var === '1') {
         return 1;
-    } else if ($var === '0') {
+    } elseif ($var === '0') {
         return 0;
     }
     return null;

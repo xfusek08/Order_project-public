@@ -54,7 +54,7 @@ $NewPage = false;
 if (isset($_GET['page'])) {
     $_SESSION['actpage'] = $_GET['page'];
     $NewPage = true;
-} else if (!isset($_SESSION['actpage'])) {
+} elseif (!isset($_SESSION['actpage'])) {
     $_SESSION['actpage'] = 'ord';
 }
 
@@ -74,7 +74,7 @@ if (isset($_POST['ajax'])) {
     $ActPage->ProcessAjaxGlobal();
     SerializeActPage($ActPage);
     exit;
-} else if (isset($_POST['pagepost'])) {
+} elseif (isset($_POST['pagepost'])) {
     $ActPage->ProcessPost();
 } else {
     $ActPage->ProcessGet();
