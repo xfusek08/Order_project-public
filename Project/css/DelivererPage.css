@@ -1,12 +1,11 @@
-.dbpageform .actions
-{
-  height: 0;  
-  position: relative;
-  top: -35px;
-  display: inline-block;
-  float: right;
+.dbpageform .actions {
+    height: 0;
+    position: relative;
+    top: -35px;
+    display: inline-block;
+    float: right;
 }
-.maincontent .right
-{
-  min-width: 800px;
+
+.maincontent .right {
+    min-width: 800px;
 }

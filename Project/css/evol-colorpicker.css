@@ -1,111 +1,130 @@
 /*
-   evol-colorpicker 3.2.6
-   (c) 2016 Olivier Giulieri
-   http://evoluteur.github.io/colorpicker/
+evol-colorpicker 3.2.6
+(c) 2016 Olivier Giulieri
+http://evoluteur.github.io/colorpicker/
 */
 .evo-pop {
-  z-index: 10000;
+    z-index: 10000;
     padding: 3px 3px 0;
-  position: fixed;
+    position: fixed;
 
 
-  background: rgb(250,250,250);
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow:         2px 2px 7px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow:    2px 2px 7px 2px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 2px 2px 7px 2px rgba(0,0,0,0.75);
+    background: rgb(250, 250, 250);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.75);
 }
+
 .evo-pop-ie {
-  z-index: 10000;
-  width: 212px;
-  padding: 3px;
+    z-index: 10000;
+    width: 212px;
+    padding: 3px;
 }
-.ui-widget-content
-{
-  font-size: 16px;
+
+.ui-widget-content {
+    font-size: 16px;
 }
+
 .evo-palette td {
-  font-size: 1px;
-  border: solid 1px #c0c0c0;
-  padding: 7px;
-  cursor: pointer;
+    font-size: 1px;
+    border: solid 1px #c0c0c0;
+    padding: 7px;
+    cursor: pointer;
 }
+
 .evo-palette td:hover {
-  outline-color: red;
-  outline-style: solid;
-  outline-width: 2px;
+    outline-color: red;
+    outline-style: solid;
+    outline-width: 2px;
 }
-.evo-palette tr.top > td {
-  border-bottom: 0;
+
+.evo-palette tr.top>td {
+    border-bottom: 0;
 }
-.evo-palette tr.in > td {
-  border-top: 0;
-  border-bottom: 0;
+
+.evo-palette tr.in>td {
+    border-top: 0;
+    border-bottom: 0;
 }
-.evo-palette tr.bottom > td {
-  border-top: 0;
+
+.evo-palette tr.bottom>td {
+    border-top: 0;
 }
+
 .evo-palette div.sep {
-  height: 3px;
+    height: 3px;
 }
+
 .evo-palette,
 .evo-palette-ie {
-  border-collapse: separate;
-  border-spacing: 4px 0px;
-  *border-collapse: expression('separate', cellSpacing='2px');
+    border-collapse: separate;
+    border-spacing: 4px 0px;
+    *border-collapse: expression('separate', cellSpacing='2px');
 }
+
 .evo-palette th,
 .evo-palette-ie th {
-  border: 0;
-  padding: 5px 3px;
-  text-align: left;
-  font-weight: normal;
-  background: transparent !important;
+    border: 0;
+    padding: 5px 3px;
+    text-align: left;
+    font-weight: normal;
+    background: transparent !important;
 }
+
 .evo-palette-ie td {
-  font-size: 1px;
-  border: solid 1px #c0c0c0;
-  padding: 7px;
-  cursor: pointer;
+    font-size: 1px;
+    border: solid 1px #c0c0c0;
+    padding: 7px;
+    cursor: pointer;
 }
+
 .evo-palette2,
 .evo-palette2-ie {
-  margin: auto;
-  border-collapse: collapse;
+    margin: auto;
+    border-collapse: collapse;
 }
+
 .evo-palette2 td,
 .evo-palette2-ie td {
-  font-size: 1px;
-  cursor: pointer;
+    font-size: 1px;
+    cursor: pointer;
 }
+
 .evo-palette2 td {
-  padding: 6px 7px;
+    padding: 6px 7px;
 }
+
 .evo-palette2-ie td {
-  padding: 5px;
+    padding: 5px;
 }
+
 .evo-palcenter {
-  padding: 5px;
-  text-align: center;
+    padding: 5px;
+    text-align: center;
 }
+
 .evo-colorind,
 .evo-colorind-ie,
 .evo-colorind-ff {
-  border: solid 1px #c3c3c3;
-  width: 18px;
-  height: 18px;
-  float: right;
-  border-radius: 10px;  
+    border: solid 1px #c3c3c3;
+    width: 18px;
+    height: 18px;
+    float: right;
+    border-radius: 10px;
 }
+
 .evo-colorind-ie {
-  position: relative;
-  top: -23px;
+    position: relative;
+    top: -23px;
 }
+
 .evo-colorbox-ie {
-  font-size: 8px;
-  padding: 3px 9px !important;
+    font-size: 8px;
+    padding: 3px 9px !important;
 }
+
 /*
 .evo-colortxt-ie {
 	position:relative;
@@ -118,72 +137,84 @@
 .evo-colorind-ff:after,
 .evo-color span:after,
 .evo-cHist:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-  font-size: 0;
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
 }
+
 .evo-color {
-  width: 94px;
-  padding: 1px 3px 0 4px;
+    width: 94px;
+    padding: 1px 3px 0 4px;
 }
+
 .evo-color div {
-  border: solid 1px #808080;
-  border-right: solid 1px #c0c0c0;
-  border-bottom: solid 1px #c0c0c0;
-  padding: 3px;
-  margin-bottom: 5px;
-  width: 10px;
-  height: 10px;
-  float: left;
+    border: solid 1px #808080;
+    border-right: solid 1px #c0c0c0;
+    border-bottom: solid 1px #c0c0c0;
+    padding: 3px;
+    margin-bottom: 5px;
+    width: 10px;
+    height: 10px;
+    float: left;
 }
+
 .evo-color span {
-  font-size: 15px;
-  margin: 1px 0 4px 3px;
-  float: left;
+    font-size: 15px;
+    margin: 1px 0 4px 3px;
+    float: left;
 }
+
 .evo-sep {
-  height: 10px;
-  font-size: 0;
+    height: 10px;
+    font-size: 0;
 }
+
 .evo-more {
-  padding: 4px 5px 4px;
-  font-size: smaller;
+    padding: 4px 5px 4px;
+    font-size: smaller;
 }
+
 .evo-cHist {
-  padding: 3px;
+    padding: 3px;
 }
+
 .evo-cHist div {
-  cursor: pointer;
-  border: solid 1px #c0c0c0;
-  padding: 3px;
-  margin: 5px;
-  width: 10px;
-  height: 10px;
-  float: left;
+    cursor: pointer;
+    border: solid 1px #c0c0c0;
+    padding: 3px;
+    margin: 5px;
+    width: 10px;
+    height: 10px;
+    float: left;
 }
+
 .evo-transparent {
-  background-image: repeating-linear-gradient(135deg, black, black 1px, white 1px, white 3px);
+    background-image: repeating-linear-gradient(135deg, black, black 1px, white 1px, white 3px);
 }
+
 .evo-tr-box {
-  cursor: pointer;
-  border: solid 1px #c0c0c0;
-  padding: 3px;
-  width: 7px;
-  height: 7px;
-  float: right;
-  position: relative;
-  right: -3px;
-  top: 2px;
+    cursor: pointer;
+    border: solid 1px #c0c0c0;
+    padding: 3px;
+    width: 7px;
+    height: 7px;
+    float: right;
+    position: relative;
+    right: -3px;
+    top: 2px;
 }
+
 a.evo-hist {
-  margin-left: 6px;
+    margin-left: 6px;
 }
+
 .evo-pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 .evo-hidden-button {
-  display: none;
+    display: none;
 }
