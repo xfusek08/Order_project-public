@@ -94,15 +94,6 @@ class OrderForm
                                     value="<?= $this->i_oOrder->GetColumnByName('oror_datum')->GetValueAsString() ?>"
                                     maxlength="15"
                                 />
-                                <span style="font-size: 20px; padding-left: 10px; padding-right: 10px">|<span>
-                                <input
-                                    class="datepicker"
-                                    type="text"
-                                    id=
-                                    style="width: 100px;"
-                                    value="<?= $this->i_oOrder->GetColumnByName('oror_datum')->GetValueAsString() ?>"
-                                    maxlength="15"
-                                />
                             </td>
                         </tr>
                         <tr>

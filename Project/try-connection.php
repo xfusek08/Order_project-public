@@ -11,6 +11,7 @@ try {
     // Perform your database operations here
     
     // Close the connection
+    echo 'Connection successful';
     $dbh = null;
 } catch (PDOException $e) {
     echo 'Connection failed: ' . $e->getMessage();
