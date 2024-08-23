@@ -19,10 +19,11 @@
                             <fo:table-row background-color="#ffffff" height="0.49cm" >
                                 <fo:table-cell number-columns-spanned="2">
                                     <!-- 70f7b5264c4c400da923fd8b0fe7323b -->
-                                    <fo:block border-bottom-color="#000000" border-bottom-style="solid" border-bottom-width="medium" margin-left="0.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="15pt" font-family="Arial" font-weight="bold" color="#000000" text-align="center">
+                                    <fo:block border-bottom-color="#000000" border-bottom-style="solid" border-bottom-width="medium" margin-left="0.0cm" margin-right="0.0cm" margin-top="0.0cm" font-size="15pt" font-family="SansSerif" font-weight="bold" color="#000000" text-align="center">
                                         <fo:inline letter-spacing="3pt">OBJEDNÁVKA PŘEPRAVY</fo:inline>č.
                                         <xsl:value-of select="fullorder/or_order/oror_cisloobj"></xsl:value-of>/
-                                        <xsl:value-of select="fullorder/or_order/oror_cisloobjrok"></xsl:value-of>- uvádějte při fakturaci!</fo:block>
+                                        <xsl:value-of select="fullorder/or_order/oror_cisloobjrok"></xsl:value-of>- uvádějte při fakturaci!
+                                    </fo:block>
                                 </fo:table-cell>
                             </fo:table-row>
                             <fo:table-row background-color="#ffffff" height="3.61cm" >
@@ -689,7 +690,7 @@
                                                     <fo:table-cell>
                                                         <fo:block font-size="10pt" font-weight="bold">
                                                         <fo:block>Poznámky:</fo:block>
-                                                        <fo:block>Toto cenové ujednání nedávejte řidiči s sebou na nakládku!!!</fo:block>
+                                                        <fo:block font-family="Arial">Toto cenové ujednání nedávejte řidiči s sebou na nakládku!!!</fo:block>
                                                         <fo:block margin-top="0.5cm"> </fo:block>
                                                         <fo:block> </fo:block>
                                                         <fo:block> </fo:block>

@@ -3,7 +3,7 @@
         <renderer mime="application/pdf">
             <fonts>
                 <!-- <directory>/app/export/fonts</directory> -->
-                <auto-detect/>
+                <!-- <auto-detect/> -->
                 <font embed-url="/app/export/fonts/FreeSerif.ttf">
                     <font-triplet name="Arial" style="normal" weight="normal"/>
                 </font>

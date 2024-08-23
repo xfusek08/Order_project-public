@@ -33,12 +33,10 @@ class FOPExport
             return '';
         }
         
-        $v_sExecString =
-            'fop' .
-            ' -c ' . 'fop.xconf' .
-            ' -xml ' . $v_sXMLFilePath .
-            ' -xsl ' . $a_sTemplate .
-            ' -pdf ' . $v_sPDFFilePath;
+        $v_sExecString ='fop -c /app/fop.xconf' .
+            " -xml $v_sXMLFilePath" .
+            " -xsl $a_sTemplate" .
+            " -pdf $v_sPDFFilePath";
         
         try {
             Logging::WriteLog(LogType::Announcement, 'executing: ' . $v_sExecString);
