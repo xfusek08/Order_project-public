@@ -1,4 +1,4 @@
-FROM php:8.2-fpm-buster
+FROM webdevops/php-apache-dev:7.4
 
 RUN apt-get update
 RUN apt-get install -y firebird-dev
